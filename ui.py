@@ -45,7 +45,6 @@ def apply_theme():
             background:
                 radial-gradient(circle at 25% 12%, rgba(255,190,50,.28), transparent 24%),
                 linear-gradient(180deg, #8f151e 0%, #c52f24 46%, #ea6429 100%);
-            min-width: 300px;
             border-right: 1px solid rgba(255,211,90,.55);
             box-shadow: 8px 0 30px rgba(108,25,20,.18);
         }
@@ -495,16 +494,19 @@ def apply_theme():
             margin: .8rem 0;
         }
 
-        @media (max-width: 760px) {
-            .block-container { padding: 1.15rem .85rem 3rem; }
-            .brand-hero { min-height: 240px; padding: 1.35rem; border-radius: 16px; background-position: 64% center; }
+        @media (max-width: 760px), (pointer: coarse) and (max-width: 1100px) {
+            .block-container { width: 100%; max-width: 100%; padding: 1.15rem .85rem 3rem; }
+            [data-testid="stHorizontalBlock"] { flex-direction: column !important; align-items: stretch !important; gap: 1rem !important; }
+            [data-testid="stColumn"] { width: 100% !important; flex: 1 1 100% !important; min-width: 0 !important; }
+            .brand-hero { min-height: 230px; padding: 1.35rem; border-radius: 16px; background-position: 64% center; }
             .hero-copy { max-width: 85%; }
-            button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #275ca8 !important; outline-offset: 3px; }
-        .product-card p { min-height: 74px; }
-        .product-card { min-height: auto; }
-            .role-description { min-height: auto; }
+            .product-card { min-height: auto; padding: 1rem; }
+            .product-card p, .role-description { min-height: 0; }
+            .product-photo-wrap { height: clamp(250px, 75vw, 330px); margin: 0 auto .75rem; }
+            .product-photo { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; }
             .page-step-grid { grid-template-columns: 1fr; }
             .hero-icon { width: 54px; height: 54px; right: 1rem; bottom: 1rem; font-size: 1.65rem; }
+            .st-key-story_setup, .st-key-story_conflict, .st-key-story_resolution { padding: .8rem; }
         }
         </style>
         """,
