@@ -1,0 +1,7 @@
+campaign_id,campaign_name,channel,start_date,end_date,budget,utm_source,utm_medium,utm_campaign,tracking_url,promo_code,created_at
+DEMO-CMP-001,Illustrative Farmers Market 1,Farmers Market,2026-10-26,2026-10-26,50.0,farmers_market,qr,illustrative_1,,DEMO001,2026-10-27T04:53:48.126166+00:00
+DEMO-CMP-002,Illustrative Paid Social 2,Paid Social,2026-10-27,2026-10-30,100.0,paid_social,paid_social,illustrative_2,,DEMO002,2026-10-27T05:05:32.089102+00:00
+DEMO-CMP-003,Illustrative Influencer 3,Influencer,2026-10-27,2026-10-27,70.0,influencer,influencer,illustrative_3,,DEMO003,2026-10-27T05:09:38.539743+00:00
+DEMO-CMP-004,Illustrative Paid Social 4,Paid Social,2026-11-16,2026-11-16,50.0,paid_social,paid_social,illustrative_4,,DEMO004,2026-11-17T00:04:28.321346+00:00
+DEMO-CMP-005,Illustrative Influencer 5,Influencer,2026-11-16,2026-11-16,60.0,influencer,influencer,illustrative_5,,DEMO005,2026-11-17T00:08:54.899779+00:00
+DEMO-CMP-006,Illustrative Paid Social 6,Paid Social,2026-11-16,2026-11-16,60.0,paid_social,paid_social,illustrative_6,,DEMO006,2026-11-17T05:27:54.626289+00:00
