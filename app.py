@@ -58,7 +58,7 @@ if st.session_state.user_role is None:
 
 else:
     if st.session_state.user_role == "Business Owner":
-        pages=[st.Page("pages/owner_overview.py",title="Business Overview",default=True),
+        pages=[st.Page("pages/owner_overview.py",title="Business Process",default=True),
                st.Page("pages/order_matching.py",title="Order Matching"),
                st.Page("pages/marketing_dashboard.py",title="Marketing Dashboard"),
                st.Page("pages/create_campaign.py",title="Create Campaign")]
@@ -69,7 +69,8 @@ else:
         with st.sidebar:
             st.markdown(logo_html(),unsafe_allow_html=True)
             st.divider()
-            st.page_link(pages[0],label="Business Overview",icon=":material/route:")
+            st.page_link(pages[0],label="Business Process",icon=":material/route:")
+            st.page_link(pages[3],label="Create Campaign",icon=":material/campaign:")
             st.page_link(pages[1],label="Order Matching",icon=":material/fact_check:")
             st.page_link(pages[2],label="Marketing Dashboard",icon=":material/bar_chart:")
             st.divider()

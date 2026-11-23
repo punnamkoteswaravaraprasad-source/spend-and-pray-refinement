@@ -112,7 +112,7 @@ active_campaigns = sum(
     if campaign_status(saved_campaign) == "Active"
 )
 
-workspace_header('Campaigns', 'Plan a campaign, then share a trackable link, promo code, or QR code.', 'CAMPAIGN MANAGEMENT')
+workspace_header('Create Campaign', 'Plan a campaign, then share a trackable link, promo code, or QR code.', 'CAMPAIGN MANAGEMENT')
 
 
 section_label("Campaign portfolio")

@@ -1,9 +1,9 @@
 import streamlit as st
 from workspace_ui import workspace_header, apply_workspace
 
-workspace_header('Business Overview', 'Follow the journey from a shared campaign to an order and its marketing results.', 'HOTVILE')
+workspace_header('Business Process', 'Follow the journey from a shared campaign to an order and its marketing results.', 'HOTVILE')
 
-st.markdown('<div class="overview-route"><span>Business Overview</span><b>→</b><span>Order Matching</span><b>→</b><span>Marketing Dashboard</span></div>',unsafe_allow_html=True)
+st.markdown('<div class="overview-route"><span>Business Process</span><b>→</b><span>Create Campaign</span><b>→</b><span>Order Matching</span><b>→</b><span>Marketing Dashboard</span></div>',unsafe_allow_html=True)
 st.subheader('How it works')
 steps = [
     ('01', 'Create and share a campaign', 'Choose the marketing channel, dates, and planned budget. Share the generated tracking link, promo code, or QR code.', 'pages/create_campaign.py', 'Create Campaign', ':material/add_circle:'),
@@ -22,8 +22,8 @@ for offset in range(0,len(steps),2):
                 if path: st.page_link(path,label=label,icon=icon)
 
 with st.container(border=True,key='workspace_panel_overview_continue'):
-    st.markdown('**Ready to review the orders?**')
-    st.page_link('pages/order_matching.py',label='Continue to Order Matching',icon=':material/arrow_forward:')
+    st.markdown('**Ready to create a campaign?**')
+    st.page_link('pages/create_campaign.py',label='Continue to Create Campaign',icon=':material/arrow_forward:')
 with st.expander('About this demo'):
     st.write('Fictional seed data and demonstration orders only. Attribution indicates association, not causation. Planned budget is not actual advertising spend or profit. Demo access has no authentication; use fictional customer details.')
 apply_workspace()

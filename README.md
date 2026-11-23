@@ -52,7 +52,7 @@ The current shared palette is white, charcoal/black and flame orange. Owner navi
 
 The current landing page uses the exact six catalog bottle photographs with cream labels, replacing the dark-label collection banner. Landing and owner surfaces use light cream/white backgrounds with orange accents, including the owner sidebar and tracking briefing.
 
-The owner navigation now follows Business Overview → Order Matching → Marketing Dashboard. Business Overview explains campaign creation/sharing, customer checkout, matching and performance review; Create Campaign is launched from its first step. The Marketing intelligence tagline and Analytics display names are removed.
+The owner navigation follows Business Process → Create Campaign → Order Matching → Marketing Dashboard. Business Process explains the workflow and links directly to Create Campaign. The campaign builder retains portfolio cards, campaign validation, saved campaigns, tracking links, promo codes and QR downloads. The Marketing intelligence tagline and Analytics display names are removed.
 
 
 ## Professor checklist completion
