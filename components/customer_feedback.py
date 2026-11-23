@@ -209,7 +209,7 @@ def display_customer_feedback(order_id):
         shopping_rating = st.radio(
             "How was your shopping experience? (Optional)",
             options=[1, 2, 3, 4, 5],
-            format_func=lambda rating: "⭐" * rating,
+            format_func=lambda rating: f"{rating} / 5",
             index=None,
             horizontal=True
         )

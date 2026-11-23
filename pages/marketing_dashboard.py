@@ -123,7 +123,7 @@ with left:
             fig=px.bar(plot,x='Amount',y='Campaign',color='Measure',orientation='h',barmode='group',color_discrete_map={'Planned budget':'#D6DDE8','Attributed revenue':BLUE})
             chart_style(fig,height=max(330,len(performance)*65))
             fig.update_xaxes(title='Amount ($)',tickprefix='$',rangemode='tozero')
-            fig.update_yaxes(title='',showgrid=False,tickfont_size=11,tickmode='array',tickvals=performance['Campaign'].tolist(),ticktext=['<br>'.join(wrap(name,20)) for name in performance['Campaign']])
+            fig.update_yaxes(title='',showgrid=False,tickfont_size=14,tickmode='array',tickvals=performance['Campaign'].tolist(),ticktext=['<br>'.join(wrap(name,20)) for name in performance['Campaign']])
             fig.update_traces(hovertemplate='%{y}<br>$%{x:,.2f}<extra>%{fullData.name}</extra>')
             show_chart(fig,'campaign_comparison')
 with right:
@@ -135,7 +135,7 @@ with right:
             fig=px.bar(ranked,x='ROAS',y='Campaign',orientation='h',color_discrete_sequence=[RED])
             chart_style(fig,height=max(330,len(performance)*65))
             fig.update_xaxes(title='ROAS (x)',ticksuffix='x',tickangle=0,dtick=.5,rangemode='tozero')
-            fig.update_yaxes(title='',showgrid=False,tickfont_size=11,tickmode='array',tickvals=performance['Campaign'].tolist(),ticktext=['<br>'.join(wrap(name,20)) for name in performance['Campaign']])
+            fig.update_yaxes(title='',showgrid=False,tickfont_size=14,tickmode='array',tickvals=performance['Campaign'].tolist(),ticktext=['<br>'.join(wrap(name,20)) for name in performance['Campaign']])
             fig.add_vline(x=1,line_dash='dot',line_color='#ACB5C3')
             fig.update_traces(hovertemplate='%{y}<br>%{x:.2f}x<extra></extra>')
             show_chart(fig,'campaign_return')

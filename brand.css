@@ -110,3 +110,39 @@
 [class*="st-key-workspace_panel_overview_step_"] {min-height:245px;}
 [class*="st-key-workspace_panel_overview_step_"] p {font-size:.9rem;line-height:1.65;}
 @media(max-width:760px) {[class*="st-key-workspace_panel_overview_step_"] {min-height:0;}.overview-route {gap:.6rem;}}
+
+/* Presentation readability and one reusable header logo. */
+.hotvile-logo {display:block;width:215px;max-width:100%;height:auto;object-fit:contain;margin:.6rem 0 1rem;}
+.shop-nav .hotvile-logo {margin:0;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] .hotvile-logo {width:215px;margin:.5rem 0 1.3rem;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] a,.stApp:has(.workspace-marker) [data-testid="stSidebar"] button {font-size:1rem!important;}
+.stApp [data-testid="stCaptionContainer"] {opacity:1!important;}
+.stApp:has(.workspace-marker) [data-testid="stCaptionContainer"] p,.stApp:has(.hotvile-landing-marker) [data-testid="stCaptionContainer"] p {font-size:.9rem!important;line-height:1.55!important;color:#6B594B!important;}
+.stApp:has(.workspace-marker) label p {font-size:1rem!important;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] [data-testid="stMetricLabel"] p {font-size:.95rem!important;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] [data-testid="stCaptionContainer"] p {font-size:.9rem!important;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {min-height:210px;}
+.header-kicker,.landing-eyebrow,.landing-hero-notes,.landing-collection-intro > span,.landing-flavor-details small,.landing-bottle-lineup figcaption,.overview-step-number {font-size:.85rem!important;}
+.overview-route span {font-size:.95rem!important;}
+.stApp .landing-flavor-details p,.stApp .st-key-landing_owner_band p,[class*="st-key-workspace_panel_overview_step_"] p {font-size:1rem!important;}
+.progress-row > div:first-child,.progress-row b {font-size:1rem!important;}
+.stApp:has(.storefront-shell) .product-detail,.stApp:has(.storefront-shell) .heat-pill {font-size:.95rem!important;}
+.stApp:has(.storefront-shell) [data-testid="stCaptionContainer"] p {font-size:.9rem!important;opacity:1!important;}
+.review-stars {color:#665446!important;font-size:.95rem!important;letter-spacing:0!important;}
+@media(max-width:760px) {
+ .hotvile-logo {width:190px;}
+ .shop-nav .hotvile-logo {width:150px;}
+ .stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {min-height:180px;}
+ .landing-hero-notes {line-height:1.7;}
+}
+
+.stApp:has(.workspace-marker) [data-testid="stMetricLabel"] p {font-size:.95rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stCaptionContainer"] p,.stApp:has(.hotvile-landing-marker) [data-testid="stCaptionContainer"] p {font-size:1rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] p {font-size:1rem!important;}
+.stApp button p {font-size:1rem!important;}
+
+.stApp:has(.workspace-marker) [data-testid="stMetricLabel"] {min-height:36px;}
+.stApp:has(.workspace-marker) [data-testid="stMetricLabel"] p {white-space:normal!important;text-overflow:clip!important;overflow:visible!important;}
+.matching-legend > div {display:flex;align-items:center;gap:.6rem;padding:.35rem 0;font-size:1rem;color:#564638;}
+.matching-legend i {width:11px;height:11px;display:inline-block;border-radius:50%;flex-shrink:0;}
+.matching-legend b {margin-left:auto;font-size:.95rem;font-weight:550;}

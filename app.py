@@ -1,3 +1,4 @@
+from branding import logo_html
 import streamlit as st
 from attribution_engine import process_orders, calculate_kpis
 from ui import apply_theme, image_data_uri
@@ -27,7 +28,7 @@ if st.session_state.user_role is None:
     st.markdown('<span class="hotvile-landing-marker"></span><div class="landing-announcement">SMALL BATCH. BIG FLAVOR. THIS IS HOTVILE.</div>',unsafe_allow_html=True)
     brand,owner_entry=st.columns([3,1],vertical_alignment="center")
     with brand:
-        st.markdown('<div class="landing-brand">HOTVILE<span>HOT SAUCE CO.</span></div>',unsafe_allow_html=True)
+        st.markdown(logo_html(),unsafe_allow_html=True)
     with owner_entry:
         if st.button("Enter Business Owner View →",width="stretch"): enter("Business Owner")
     with st.container(key="hotvile_landing_hero"):
@@ -66,7 +67,7 @@ else:
     navigation = st.navigation(pages, position="hidden")
     if st.session_state.user_role == "Business Owner":
         with st.sidebar:
-            st.markdown('<div class="sidebar-lockup"><div class="sidebar-monogram">HV</div><div><strong>HOTVILE</strong></div></div>',unsafe_allow_html=True)
+            st.markdown(logo_html(),unsafe_allow_html=True)
             st.divider()
             st.page_link(pages[0],label="Business Overview",icon=":material/route:")
             st.page_link(pages[1],label="Order Matching",icon=":material/fact_check:")

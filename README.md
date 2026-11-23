@@ -53,3 +53,8 @@ The current shared palette is white, charcoal/black and flame orange. Owner navi
 The current landing page uses the exact six catalog bottle photographs with cream labels, replacing the dark-label collection banner. Landing and owner surfaces use light cream/white backgrounds with orange accents, including the owner sidebar and tracking briefing.
 
 The owner navigation now follows Business Overview → Order Matching → Marketing Dashboard. Business Overview explains campaign creation/sharing, customer checkout, matching and performance review; Create Campaign is launched from its first step. The Marketing intelligence tagline and Analytics display names are removed.
+
+
+## Professor checklist completion
+
+Larger control, caption and chart text; one reusable SVG header logo across landing/store/owner pages; numeric survey ratings; plain QR download labels; shorter repeated captions; and Order Matching summaries/graphs by default. Individual order information is not rendered until "Open order review tools" is enabled. The evidence-based review workflow remains available for investigations. Customer satisfaction retains its metric cards and charts with written reviews collapsed. Presentation timing requires a team rehearsal and is outside the website implementation.

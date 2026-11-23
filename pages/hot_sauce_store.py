@@ -1,3 +1,4 @@
+from branding import logo_html
 import base64
 import csv
 import uuid
@@ -517,7 +518,7 @@ bag_count=sum(st.session_state.cart.values())
 feature_image=image_data_uri('images/mango-habanero-hotvile-v3.png')
 st.markdown(f'''<div class="storefront-shell">
 <div class="shop-announcement">SMALL BATCH. BIG FLAVOR. FIND YOUR HEAT.</div>
-<nav class="shop-nav"><div class="shop-wordmark">HOTVILE</div><div><a href="#sauce-collection">HOT SAUCES</a><a href="#your-bag">YOUR BAG ({bag_count})</a></div></nav>
+<nav class="shop-nav">{logo_html()}<div><a href="#sauce-collection">HOT SAUCES</a><a href="#your-bag">YOUR BAG ({bag_count})</a></div></nav>
 <section class="shop-hero"><div class="shop-hero-copy"><span>SIX SAUCES. ENDLESS POSSIBILITIES.</span><h1 class="store-title">TURN UP<br>THE FLAVOR.</h1><p>From mellow and smoky to bright and fiery. Find your everyday favorite.</p><a class="shop-cta" href="#sauce-collection">SHOP THE SAUCES <span>↗</span></a><small>Demonstration store · No real payments</small></div><div class="shop-feature"><img src="{feature_image}" alt="HotVile Mango Habanero hot sauce bottle with its branded label"><span class="shop-feature-tag">MEET YOUR<br>NEW FAVORITE.</span></div></section>
 </div>''',unsafe_allow_html=True)
 

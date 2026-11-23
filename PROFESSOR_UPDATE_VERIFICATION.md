@@ -48,3 +48,14 @@ The public InsurAI login page was used as the interaction reference. Its authent
 ## Unified HotVile palette and landing page
 
 Replaced the split marketing-demo welcome screen with a HotVile-first brand page, product imagery, three flavor previews, a shopping action and secondary owner access. Owner screens use white/black/orange instead of navy/blue; the repeated overview summary strip is removed. Shared palette changes retain the existing datasets, filters, customer cart and attribution logic. Regression and isolated integration checks passed before deployment.
+
+
+## Remaining checklist changes
+
+- Shared `images/hotvile-logo.svg` rendered by `branding.py` on all page headers.
+- Enlarged captions, labels, controls, product text and chart ticks; retained light backgrounds and dark text.
+- Removed visible emoji ratings/download labels and repeated campaign captions.
+- Order Matching defaults to aggregate KPIs and two charts. Individual records, search and manual review are rendered only after an explicit checkbox.
+- Integration checks assert no individual-order table by default, two aggregate charts, and successful optional review with required evidence.
+- Existing customer satisfaction cards/distribution charts remain; written feedback stays in an expander.
+- Rehearsal timing is a separate team activity.

@@ -43,13 +43,13 @@ def apply_workspace():
 def chart_style(fig, title=None, currency=False, height=330):
     fig.update_layout(template='plotly_white', height=height,
         paper_bgcolor='white',plot_bgcolor='white',
-        font=dict(family='Arial, sans-serif',size=12,color='#566174'),
-        title=dict(text=title or '',font=dict(size=14,color='#242424'),x=0),
-        margin=dict(l=65,r=25,t=40 if title else 20,b=65),
+        font=dict(family='Arial, sans-serif',size=15,color='#566174'),
+        title=dict(text=title or '',font=dict(size=17,color='#242424'),x=0),
+        margin=dict(l=85,r=30,t=40 if title else 20,b=80),
         legend=dict(orientation='h',yanchor='bottom',y=1.02,x=0,title_text=''),
         hoverlabel=dict(bgcolor='white',font_color='#242424'))
-    fig.update_xaxes(automargin=True,showline=False,zeroline=False,gridcolor='#EEF1F5',title_standoff=15)
-    fig.update_yaxes(automargin=True,showline=False,zeroline=False,gridcolor='#EEF1F5',title_standoff=15)
+    fig.update_xaxes(automargin=True,showline=False,zeroline=False,gridcolor='#EEF1F5',title_standoff=18,tickfont_size=15)
+    fig.update_yaxes(automargin=True,showline=False,zeroline=False,gridcolor='#EEF1F5',title_standoff=18,tickfont_size=15)
     if currency: fig.update_yaxes(tickprefix='$',tickformat=',.0f',rangemode='tozero')
     return fig
 

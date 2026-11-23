@@ -418,13 +418,12 @@ def display_recent_feedback(feedback):
             rating = int(response.get("shopping_rating", 0))
         except (TypeError, ValueError):
             rating = 0
-        stars = "★" * max(0, min(rating, 5)) + "☆" * (5 - max(0, min(rating, 5)))
         comment = escape(response.get("customer_feedback", ""))
         source = escape(get_reported_source(response))
         order_id = escape(response.get("order_id", ""))
         cards.append(
             f'<article class="review-card">'
-            f'<div class="review-top"><span class="review-stars">{stars}</span>'
+            f'<div class="review-top"><span class="review-stars">Customer rating</span>'
             f'<span class="review-rating">{rating}/5</span></div>'
             f'<p class="review-comment">“{comment}”</p>'
             f'<div class="review-meta"><span>{source}</span><span>{order_id}</span></div>'
@@ -527,7 +526,7 @@ def display_feedback_dashboard(order_ids=None):
         selected = set(order_ids)
         orders = [row for row in orders if row.get("order_id") in selected]
     metrics = calculate_feedback_metrics(orders, feedback)
-    st.caption(f"Early feedback · {metrics['total_responses']} responses from {metrics['total_orders']} selected demo orders. Self-reported discovery is separate from verified campaign attribution.")
+    st.caption(f"Demo feedback · {metrics['total_responses']} responses from {metrics['total_orders']} selected orders.")
     if not metrics["total_responses"]:
         st.info("Customer feedback will appear here after customers submit their surveys.")
         return
@@ -558,7 +557,7 @@ def display_feedback_dashboard(order_ids=None):
         )
         fig.update_layout(
             template="plotly_white", paper_bgcolor="#FFFFFF", plot_bgcolor="#FFFFFF",
-            font=dict(color="#2D211D", size=13), showlegend=False,
+            font=dict(color="#2D211D", size=15), showlegend=False,
             margin=dict(l=10, r=15, t=10, b=10), height=280,
             xaxis_title="Number of responses", yaxis_title=None
         )

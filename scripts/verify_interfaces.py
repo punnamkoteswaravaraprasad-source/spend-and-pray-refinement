@@ -43,8 +43,11 @@ with TemporaryDirectory(dir=root.parent) as tmp:
     print('PASS campaign creation, blank-name and invalid-date validation')
     a=page('pages/order_matching.py')
     assert any(m.value=='150' for m in a.metric)
+    assert not a.dataframe, 'Individual orders must be hidden by default'
+    assert len(a.get('plotly_chart'))==2
     a.selectbox[0].set_value('Needs attention').run()
     assert not a.exception
+    a.checkbox(key='show_order_review').check().run()
     a.text_input[0].set_value('no-such-fictional-customer').run()
     assert a.info and not a.exception
     a.text_input[0].set_value('').run()

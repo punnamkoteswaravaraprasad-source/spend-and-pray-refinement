@@ -56,10 +56,10 @@ def current_campaign_link(campaign):
 
 
 CHANNEL_DETAILS = {
-    "Paid Social": ("📱", "Track a paid social advertisement or promoted post."),
-    "Influencer": ("🎥", "Track a creator partnership or influencer promotion."),
-    "Farmers Market": ("🧺", "Use a QR code or promo code at an in-person market."),
-    "Pop-up Event": ("🏪", "Track a temporary retail event or product activation."),
+    "Paid Social": ("", "Track a paid social advertisement or promoted post."),
+    "Influencer": ("", "Track a creator partnership or influencer promotion."),
+    "Farmers Market": ("", "Use a QR code or promo code at an in-person market."),
+    "Pop-up Event": ("", "Track a temporary retail event or product activation."),
 }
 
 
@@ -282,11 +282,9 @@ with create_tab:
 
                 st.markdown('<div class="share-asset-label">Customer Promo Code</div>', unsafe_allow_html=True)
                 st.code(campaign["promo_code"], language=None)
-                st.caption("Use this code at checkout. The copy button is available on the code block.")
 
                 st.markdown('<div class="share-asset-label">Customer Tracking Link</div>', unsafe_allow_html=True)
                 st.code(share_url, language=None)
-                st.caption("The tracking link includes this campaign's ID and UTM parameters.")
 
                 st.link_button(
                     "Open Customer Store",
@@ -300,7 +298,7 @@ with create_tab:
                 qr_bytes = generate_qr_code(share_url)
                 st.image(qr_bytes, width=200)
                 st.download_button(
-                    "⬇ Download QR Code",
+                    "Download QR Code",
                     data=qr_bytes,
                     file_name=f"{campaign['campaign_id']}.png",
                     mime="image/png",
@@ -317,7 +315,6 @@ with create_tab:
 
 with saved_tab:
     st.markdown("### Campaign portfolio")
-    st.caption("Only decision-relevant campaign fields are shown. Technical UTM values remain in the backend.")
 
     if not campaigns:
         st.info("No campaigns have been created yet.")
