@@ -57,28 +57,22 @@ if st.session_state.user_role is None:
 
 else:
     if st.session_state.user_role == "Business Owner":
-        pages=[st.Page("pages/owner_overview.py",title="Dashboard",default=True),
-               st.Page("pages/marketing_dashboard.py",title="Analytics"),
-               st.Page("pages/create_campaign.py",title="Create Campaign"),
-               st.Page("pages/order_matching.py",title="Order Matching")]
+        pages=[st.Page("pages/owner_overview.py",title="Business Overview",default=True),
+               st.Page("pages/order_matching.py",title="Order Matching"),
+               st.Page("pages/marketing_dashboard.py",title="Marketing Dashboard"),
+               st.Page("pages/create_campaign.py",title="Create Campaign")]
     else:
         pages=[st.Page("pages/hot_sauce_store.py",title="HotVile Store",url_path="hot_sauce_store",default=True)]
     navigation = st.navigation(pages, position="hidden")
     if st.session_state.user_role == "Business Owner":
         with st.sidebar:
-            st.markdown('<div class="sidebar-lockup"><div class="sidebar-monogram">HV</div><div><strong>HOTVILE</strong><small>Marketing intelligence</small></div></div>',unsafe_allow_html=True)
+            st.markdown('<div class="sidebar-lockup"><div class="sidebar-monogram">HV</div><div><strong>HOTVILE</strong></div></div>',unsafe_allow_html=True)
             st.divider()
-            if st.session_state.user_role == "Business Owner":
-                st.caption("OVERVIEW")
-                st.page_link(pages[0],label="Dashboard",icon=":material/dashboard:")
-                st.caption("MARKETING OPERATIONS")
-                st.page_link(pages[2],label="Create Campaign",icon=":material/add_circle:")
-                st.page_link(pages[3],label="Order Matching",icon=":material/fact_check:")
-                st.page_link(pages[1],label="Analytics",icon=":material/bar_chart:")
-            else:
-                st.page_link(pages[0],label="HotVile Store",icon=":material/storefront:")
+            st.page_link(pages[0],label="Business Overview",icon=":material/route:")
+            st.page_link(pages[1],label="Order Matching",icon=":material/fact_check:")
+            st.page_link(pages[2],label="Marketing Dashboard",icon=":material/bar_chart:")
             st.divider()
-            st.markdown('<div class="sidebar-profile">Business owner demo<small>No authentication · Fictional data</small></div>' if st.session_state.user_role == "Business Owner" else '<div class="sidebar-profile">HotVile customer<small>Demonstration store</small></div>',unsafe_allow_html=True)
+            st.markdown('<div class="sidebar-profile">Business owner demo<small>No authentication · Fictional data</small></div>',unsafe_allow_html=True)
             if st.button("Switch demo experience",width="stretch"):
                 st.session_state.user_role=None
                 st.session_state.campaign_tracking={}

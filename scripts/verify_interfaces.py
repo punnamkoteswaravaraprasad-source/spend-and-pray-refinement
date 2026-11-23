@@ -29,8 +29,9 @@ with TemporaryDirectory(dir=root.parent) as tmp:
         next(b for b in a.button if b.label==label).click().run()
         assert not a.exception,a.exception
     a=page('app.py');click(a,'Enter Business Owner View →')
-    assert any(m.value=='150' for m in a.metric)
-    print('PASS welcome and owner overview')
+    assert any('<h1>Business Overview</h1>' in m.value for m in a.markdown)
+    assert any(h.value=='How it works' for h in a.subheader)
+    print('PASS landing entry and Business Overview workflow steps')
     a=page('pages/create_campaign.py')
     click(a,'Create Campaign Assets');assert a.error
     a.text_input[0].set_value('Date validation')

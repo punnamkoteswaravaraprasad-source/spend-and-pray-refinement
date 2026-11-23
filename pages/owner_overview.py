@@ -1,54 +1,29 @@
 import streamlit as st
-from html import escape
-from attribution_engine import process_orders,calculate_kpis
-from workspace_ui import apply_workspace,metric_tile
+from workspace_ui import workspace_header, apply_workspace
 
-rows,campaigns=process_orders()
-k=calculate_kpis(rows)
-attention=k['unattributed_orders']+k['needs_review']
-st.markdown('<span class="workspace-marker"></span>',unsafe_allow_html=True)
-apply_workspace()
-with st.container(key='owner_hero'):
-    st.markdown('<div class="hero-kicker"><span></span> HOTVILE / BUSINESS OVERVIEW</div>',unsafe_allow_html=True)
-    left,right=st.columns([1.5,1],vertical_alignment='center')
-    with left:
-        st.title('Your business, in focus.')
-        st.write('Connect campaign activity to customer orders and focus on the tracking gaps that need attention.')
-    with right:
-        st.page_link('pages/create_campaign.py',label='Create campaign',icon=':material/add_circle:')
-        st.page_link('pages/marketing_dashboard.py',label='Explore analytics',icon=':material/arrow_forward:')
-a,b,c,d=st.columns(4)
-metric_tile(a,'Total revenue',f'${k["total_revenue"]:,.2f}','Across recorded demo orders','overview_revenue',icon='money')
-metric_tile(b,'Customer orders',str(k['total_orders']),'In the connected dataset','overview_orders',icon='orders')
-metric_tile(c,'Attribution coverage',f'{k["coverage"]:.1f}%','Orders matched to a campaign','overview_coverage','green','check')
-metric_tile(d,'Needs attention',str(attention),'Missing or conflicting tracking','overview_attention','orange','alert')
-gap=k['total_revenue']-k['matched_revenue']
-recommendation=('Review orders without a verified campaign match before comparing channel returns.' if attention else 'All orders have verified campaign matches. Explore campaign performance to compare results.')
-st.markdown(f'<section class="tracking-brief"><div class="brief-title">Tracking briefing <span>CALCULATED SUMMARY</span></div><p>{attention} of {k["total_orders"]} orders have no verified campaign match, accounting for <b>${gap:,.2f}</b> in revenue.</p><div class="brief-recommendation">{escape(recommendation)}</div></section>',unsafe_allow_html=True)
-left,right=st.columns([1.3,1])
-with left:
-    with st.container(border=True,key='workspace_panel_overview_channels'):
-        st.subheader('Channel revenue')
-        import plotly.express as px
-        import pandas as pd
-        from workspace_ui import chart_style,show_chart
-        matched=[r for r in rows if r['status']=='Matched']
-        if matched:
-            summary=pd.DataFrame(matched).groupby('channel',as_index=False)['revenue'].sum().sort_values('revenue')
-            fig=px.bar(summary,x='revenue',y='channel',orientation='h',color_discrete_sequence=['#EE512E'])
-            chart_style(fig,height=310);fig.update_xaxes(title='Revenue ($)',tickprefix='$');fig.update_yaxes(title='')
-            show_chart(fig,'overview_channel_revenue')
-        else: st.info('No matched orders to compare yet.')
-with right:
-    with st.container(border=True,key='workspace_panel_overview_actions'):
-        st.subheader('Next actions')
-        st.page_link('pages/order_matching.py',label='Review order attribution',icon=':material/fact_check:')
-        st.caption(f'{attention} orders need attention')
-        st.divider()
-        st.page_link('pages/create_campaign.py',label='Manage campaign links',icon=':material/link:')
-        st.caption(f'{len(campaigns)} saved campaigns')
-        st.divider()
-        st.page_link('pages/marketing_dashboard.py',label='Filter and compare results',icon=':material/bar_chart:')
-with st.expander('About these results'):
-    st.write('Fictional seed data and demonstration orders. Attribution indicates association, not causation. Budget-based ROAS uses planned budget, not actual ad spend or profit. Demo access has no authentication; use fictional customer details.')
+workspace_header('Business Overview', 'Follow the journey from a shared campaign to an order and its marketing results.', 'HOTVILE')
+
+st.markdown('<div class="overview-route"><span>Business Overview</span><b>→</b><span>Order Matching</span><b>→</b><span>Marketing Dashboard</span></div>',unsafe_allow_html=True)
+st.subheader('How it works')
+steps = [
+    ('01', 'Create and share a campaign', 'Choose the marketing channel, dates, and planned budget. Share the generated tracking link, promo code, or QR code.', 'pages/create_campaign.py', 'Create Campaign', ':material/add_circle:'),
+    ('02', 'The customer places an order', 'The customer browses HotVile sauces, builds a cart, and completes a demo checkout. Available campaign signals are saved with the order.', None, None, None),
+    ('03', 'Review order matching', 'Check which orders match a campaign and which are unattributed or need review. Record evidence when changing an attribution decision.', 'pages/order_matching.py', 'Order Matching', ':material/fact_check:'),
+    ('04', 'Compare marketing results', 'Use filters and graphs to compare revenue, orders, channels, and campaign budgets. Budget-based ROAS compares matched revenue with planned budget.', 'pages/marketing_dashboard.py', 'Marketing Dashboard', ':material/bar_chart:'),
+]
+for offset in range(0,len(steps),2):
+    columns=st.columns(2,gap='large')
+    for column,(number,title,description,path,label,icon) in zip(columns,steps[offset:offset+2]):
+        with column:
+            with st.container(border=True,key=f'workspace_panel_overview_step_{number}'):
+                st.markdown(f'<span class="overview-step-number">{number}</span>',unsafe_allow_html=True)
+                st.subheader(title)
+                st.write(description)
+                if path: st.page_link(path,label=label,icon=icon)
+
+with st.container(border=True,key='workspace_panel_overview_continue'):
+    st.markdown('**Ready to review the orders?**')
+    st.page_link('pages/order_matching.py',label='Continue to Order Matching',icon=':material/arrow_forward:')
+with st.expander('About this demo'):
+    st.write('Fictional seed data and demonstration orders only. Attribution indicates association, not causation. Planned budget is not actual advertising spend or profit. Demo access has no authentication; use fictional customer details.')
 apply_workspace()

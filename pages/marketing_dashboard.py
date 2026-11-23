@@ -12,7 +12,7 @@ from components.feedback_analytics import display_feedback_dashboard
 from reporting import amount
 from workspace_ui import workspace_header, apply_workspace, chart_style, show_chart, RED, BLUE, GREEN, MUTED, metric_tile, progress_panel
 
-workspace_header('Analytics Dashboard', 'Filter orders and compare sales, campaigns, and attribution.', 'MARKETING INTELLIGENCE')
+workspace_header('Marketing Dashboard', 'Filter orders and compare sales, campaigns, and attribution.', 'HOTVILE')
 results, campaigns = process_orders()
 frame = pd.DataFrame(results, columns=['order_id','order_date','revenue','status','campaign_id','campaign_name','channel'])
 frame['order_date'] = pd.to_datetime(frame['order_date'], errors='coerce', utc=True)

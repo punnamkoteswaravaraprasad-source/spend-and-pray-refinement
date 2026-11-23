@@ -102,3 +102,11 @@
  .landing-bottle-lineup img {height:170px;}
  .landing-bottle-lineup figcaption {font-size:.65rem;}
 }
+
+.overview-route {display:flex;align-items:center;flex-wrap:wrap;gap:.8rem;padding:.9rem 1.1rem;margin:0 0 1.5rem;border:1px solid #E8DFD4;border-radius:9px;background:#FFF8EF;}
+.overview-route span {font-size:.8rem;color:#695448;font-weight:600;}
+.overview-route b {color:#D64E2D;font-weight:500;}
+.overview-step-number {display:inline-block;font-size:.7rem;font-weight:750;letter-spacing:.08em;color:#BB4628;background:#FFF0E3;border-radius:7px;padding:.45rem .65rem;}
+[class*="st-key-workspace_panel_overview_step_"] {min-height:245px;}
+[class*="st-key-workspace_panel_overview_step_"] p {font-size:.9rem;line-height:1.65;}
+@media(max-width:760px) {[class*="st-key-workspace_panel_overview_step_"] {min-height:0;}.overview-route {gap:.6rem;}}
