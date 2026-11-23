@@ -37,8 +37,9 @@ if st.session_state.user_role is None:
             if st.button("Shop HotVile sauces →",type="primary",width="stretch"): enter("Customer")
             st.markdown('<div class="landing-hero-notes">SIX SIGNATURE SAUCES <span>•</span> MILD TO EXTRA HOT</div>',unsafe_allow_html=True)
         with visual:
-            banner=image_data_uri("images/companybanner.png")
-            st.markdown(f'<div class="landing-bottles"><img src="{banner}" alt="Meet HotVile: six branded bottles of hot sauce"><div class="landing-stamp">FIND<br>YOUR HEAT.</div></div>',unsafe_allow_html=True)
+            from catalog import PRODUCTS
+            bottles=''.join(f'<figure><img src="{image_data_uri(product["image"])}" alt="HotVile {product["name"]} bottle with its cream label"><figcaption>{product["name"]}</figcaption></figure>' for product in PRODUCTS)
+            st.markdown(f'<div class="landing-bottle-lineup" aria-label="The six HotVile sauces with matching cream labels">{bottles}</div>',unsafe_allow_html=True)
     st.markdown('<section class="landing-collection-intro"><span>THE HOTVILE LINEUP</span><h2>A little heat. A lot of personality.</h2><p>Start with an everyday classic, go sweet and fiery, or turn up the heat.</p></section>',unsafe_allow_html=True)
     from catalog import PRODUCTS
     choices=st.columns(3,gap="large")

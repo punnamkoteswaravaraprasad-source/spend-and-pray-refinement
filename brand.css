@@ -68,3 +68,37 @@
 
 .landing-bottles img {object-fit:contain;min-height:0;height:auto;}
 .stApp:has(.hotvile-landing-marker) button[kind="primary"],.stApp:has(.workspace-marker) button[kind="primary"],.stApp:has(.storefront-shell) button[kind="primary"] {background:#D94727!important;border-color:#D94727!important;}
+
+/* Light presentation with one consistent cream-label bottle collection. */
+.st-key-hotvile_landing_hero {background:#FFF7EC!important;border:1px solid #EFE0D0;}
+.stApp .st-key-hotvile_landing_hero .landing-headline {color:#25211D!important;}
+.stApp .st-key-hotvile_landing_hero .landing-headline .flavor-orange {color:#D84B29!important;}
+.stApp .st-key-hotvile_landing_hero .landing-intro {color:#6B5A4B!important;}
+.st-key-hotvile_landing_hero .landing-eyebrow {color:#B94427;}
+.st-key-hotvile_landing_hero .landing-hero-notes {color:#78695C;}
+.landing-bottle-lineup {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:.4rem 0;}
+.landing-bottle-lineup figure {margin:0;background:#FCF5E9;border:1px solid #EFE2D4;border-radius:12px;overflow:hidden;}
+.landing-bottle-lineup img {display:block;width:100%;height:170px;object-fit:contain;}
+.landing-bottle-lineup figcaption {text-align:center;font-size:.67rem;color:#5D4938;font-weight:650;padding:.55rem .2rem .65rem;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] {background:#FFFCF7!important;border-right:1px solid #E8E1DA!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] p,.stApp:has(.workspace-marker) [data-testid="stSidebar"] span,.stApp:has(.workspace-marker) [data-testid="stSidebar"] a {color:#625246!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {color:#8B7767!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] hr {border-color:#E8E1DA;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"][aria-current] {background:#FFF0DF!important;}
+.sidebar-lockup strong {color:#29221C!important;}
+.sidebar-lockup small {color:#89715F!important;}
+.sidebar-monogram {background:#FFF0DF!important;color:#BF4A2B!important;border-color:#EDC7AE!important;}
+.sidebar-profile {background:#FFF7ED!important;border-color:#EBDCCC!important;color:#514133!important;}
+.sidebar-profile small {color:#89715F!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] button {background:#FFFFFF!important;border-color:#DDCDBE!important;}
+.stApp:has(.workspace-marker) .tracking-brief {background:#FFF5E8!important;border-color:#EED8BF!important;}
+.stApp:has(.workspace-marker) .tracking-brief .brief-title {color:#30251D!important;}
+.stApp:has(.workspace-marker) .tracking-brief .brief-title span {color:#AA482C!important;border-color:#EBCBB4!important;background:#FFFFFF!important;}
+.stApp:has(.workspace-marker) .tracking-brief p {color:#6B5746!important;}
+.stApp:has(.workspace-marker) .tracking-brief .brief-recommendation {color:#433124!important;}
+@media(min-width:1500px) {.landing-bottle-lineup img {height:210px;}}
+@media(max-width:760px) {
+ .landing-bottle-lineup {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+ .landing-bottle-lineup img {height:170px;}
+ .landing-bottle-lineup figcaption {font-size:.65rem;}
+}
