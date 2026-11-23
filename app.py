@@ -3,7 +3,7 @@ from attribution_engine import process_orders, calculate_kpis
 from ui import apply_theme, image_data_uri
 from interaction_ui import apply_interactions
 
-st.set_page_config(page_title="Spend & Pray | HotVile", page_icon="H", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Spend & Pray | HotVile", page_icon="H", layout="wide", initial_sidebar_state="auto")
 apply_theme()
 apply_interactions()
 st.session_state.setdefault("user_role", None)
@@ -20,30 +20,6 @@ if any(k in st.query_params for k in keys):
 def enter(role):
     st.session_state.user_role = role
     st.rerun()
-
-def owner_home():
-    rows, campaigns = process_orders()
-    metrics = calculate_kpis(rows)
-    st.caption("HOTVILE / OWNER WORKSPACE")
-    st.title("Your marketing, connected.")
-    st.write("See what sold, where tracking is missing, and which campaigns to review next.")
-    st.info("Demo workspace · Fictional seed data and demonstration orders. No real payments or authentication.")
-    a,b,c,d = st.columns(4)
-    a.metric("Total revenue", f"${metrics['total_revenue']:,.2f}")
-    b.metric("Orders", metrics['total_orders'])
-    c.metric("Attribution coverage", f"{metrics['coverage']:.1f}%")
-    d.metric("Orders needing attention", metrics['unattributed_orders'] + metrics['needs_review'])
-    st.subheader("Choose your next action")
-    for path,title,copy in [
-        ("pages/create_campaign.py","Create a campaign","Set your budget and generate a tracking link, promo code, and QR code."),
-        ("pages/order_matching.py","Review order matching","Check missing or conflicting tracking signals and record a review decision."),
-        ("pages/marketing_dashboard.py","Explore performance","Compare channels, campaign returns, and customer feedback.")]:
-        with st.container(border=True):
-            st.page_link(path,label=title)
-            st.caption(copy)
-    with st.expander("How the demo works"):
-        st.write("Create a campaign → share its link → place a demo order → review attribution → compare results.")
-        st.write("Budget-based ROAS compares matched revenue with planned budget. It does not measure profit or prove that marketing caused a sale.")
 
 if st.session_state.user_role is None:
     # Register the welcome route too, disabling legacy automatic pages discovery.
@@ -73,11 +49,21 @@ if st.session_state.user_role is None:
             if st.button("Enter Business Owner View →",width="stretch"): enter("Business Owner")
             st.caption("Demo access · No authentication · Use fictional customer details only.")
 else:
+    if st.session_state.user_role == "Business Owner":
+        pages=[st.Page("pages/marketing_dashboard.py",title="Performance overview",default=True),
+               st.Page("pages/create_campaign.py",title="Create Campaign"),
+               st.Page("pages/order_matching.py",title="Order Matching")]
+    else:
+        pages=[st.Page("pages/hot_sauce_store.py",title="HotVile Store",url_path="hot_sauce_store",default=True)]
+    navigation = st.navigation(pages, position="hidden")
     with st.sidebar:
         st.markdown("### HOTVILE")
         st.caption("SPEND & PRAY")
         st.divider()
-        st.write(st.session_state.user_role)
+        for page in pages:
+            st.page_link(page, label=page.title)
+        st.divider()
+        st.caption(st.session_state.user_role)
         st.caption("Demo access · No authentication")
         if st.button("Switch demo experience",width="stretch"):
             st.session_state.user_role=None
@@ -85,12 +71,5 @@ else:
             st.session_state.last_campaign_signature=None
             st.query_params.clear()
             st.rerun()
-    if st.session_state.user_role == "Business Owner":
-        pages=[st.Page(owner_home,title="Owner Overview",default=True),
-               st.Page("pages/create_campaign.py",title="Create Campaign"),
-               st.Page("pages/order_matching.py",title="Order Matching"),
-               st.Page("pages/marketing_dashboard.py",title="Marketing Dashboard")]
-    else:
-        pages=[st.Page("pages/hot_sauce_store.py",title="HotVile Store",url_path="hot_sauce_store",default=True)]
-    st.navigation(pages).run()
+    navigation.run()
     apply_interactions()

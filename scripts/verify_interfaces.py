@@ -42,6 +42,17 @@ with TemporaryDirectory(dir=root.parent) as tmp:
     print('PASS campaign creation, blank-name and invalid-date validation')
     a=page('pages/order_matching.py')
     assert any(m.value=='150' for m in a.metric)
+    a.selectbox[0].set_value('Needs attention').run()
+    assert not a.exception
+    a.text_input[0].set_value('no-such-fictional-customer').run()
+    assert a.info and not a.exception
+    a.text_input[0].set_value('').run()
+    review_note=next(w for w in a.text_input if w.label=='Evidence / review note')
+    click(a,'Save Review');assert a.error
+    review_note=next(w for w in a.text_input if w.label=='Evidence / review note')
+    review_note.set_value('QA verified campaign receipt in isolated test')
+    click(a,'Save Review');assert a.success and not a.exception
+    print('PASS order status filter, search, evidence validation and review save')
     a=page('pages/marketing_dashboard.py')
     assert len(a.get('plotly_chart'))>=6
     assert any(m.value=='150' for m in a.metric)

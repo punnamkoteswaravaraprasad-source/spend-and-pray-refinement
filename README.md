@@ -14,7 +14,7 @@ The optional sample-scope engine API is retained for compatibility and covered b
 
 ## Interaction update
 
-The split welcome screen, focused action cards, form spacing and focus feedback are inspired by the public InsurAI login page. HotVile branding is retained. Demo role access is explicitly labeled; this is not an authentication system. The owner overview leads with live dataset totals and actions. Navigation is initially collapsed and cards stack on phones.
+The split welcome screen, focused action cards, form spacing and focus feedback are inspired by the public InsurAI login page. HotVile branding is retained. Demo role access is explicitly labeled; this is not an authentication system. The owner workspace opens directly into a professional analytics dashboard with neutral panels, four primary KPIs, a chart grid, and visible filters. Campaign creation uses a focused form beside sharing guidance. Order Matching uses a searchable table and one review form; all three attribution statuses remain distinct. Navigation is initially collapsed and cards stack on phones.
 
 ## KPI definitions
 
@@ -35,3 +35,7 @@ No authentication, payments, inventory, shipping calculation, tax calculation, a
 ## Verification
 
 Run `python -m unittest discover -s tests -v` and `python scripts/verify_interfaces.py`. Integration checks work in temporary copies and do not create records in the deployed dataset. See `PROFESSOR_UPDATE_VERIFICATION.md` for final results.
+
+## Internal workspace refinement
+
+Owner screens share `workspace_ui.py` and `workspace.css`. The dashboard includes revenue trends, attribution breakdown, channel revenue and order comparisons, campaign budget/revenue comparisons, budget-based ROAS ranking, order volume, and filtered customer feedback. Order status filters use the same denominator for every chart and KPI. Product cards use restrained borders and no glow effects. The welcome screen was left unchanged during this internal-layout revision.

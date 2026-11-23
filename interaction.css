@@ -40,3 +40,22 @@ button:hover {box-shadow:0 4px 16px #48281f16;}
 @media(prefers-reduced-motion:reduce) {button,a,input,textarea {transition:none!important;}}
 
 .heat-meter-label,.heat-meter-value {color:#704936!important;}
+
+/* Storefront: product-led cards, restrained detail, and consistent actions. */
+.stApp:has(.store-title) .block-container {max-width:1280px;}
+.stApp:has(.store-title) .six-sauce-banner {max-width:100%;box-shadow:none;border-radius:12px;}
+.stApp:has(.store-title) .six-sauce-banner img {max-height:210px;object-fit:cover;object-position:center;}
+.stApp:has(.store-title) [class*="st-key-sauce_card_"] {background:white!important;border:1px solid #E3E7EE!important;border-radius:12px!important;padding:1rem!important;box-shadow:none!important;transition:none!important;transform:none!important;}
+.stApp:has(.store-title) [class*="st-key-sauce_card_"]:hover {border-color:#C8CED8!important;box-shadow:none!important;transform:none!important;}
+.stApp:has(.store-title) [class*="st-key-sauce_card_"] img,.stApp:has(.store-title) [class*="st-key-sauce_card_"]:hover img {filter:none!important;transform:none!important;box-shadow:none!important;}
+.stApp:has(.store-title) .product-name {font-size:1rem!important;font-weight:650;}
+.stApp:has(.store-title) .product-detail {font-size:.85rem!important;color:#687488!important;}
+.stApp:has(.store-title) .product-price {font-size:1.2rem!important;color:#202B3D!important;}
+.stApp:has(.store-title) .bestseller-badge {background:#F2F5F8!important;color:#59677C!important;box-shadow:none!important;}
+.stApp:has(.store-title) .brand-tag {font-size:.65rem;letter-spacing:.08em;}
+.stApp:has(.store-title) .store-title {font-size:2rem!important;letter-spacing:-.04em;}
+.stApp:has(.store-title) .section-heading {font-size:1.25rem!important;}
+.stApp:has(.store-title) button[kind="primary"] {background:#9D3439!important;border-radius:7px!important;box-shadow:none!important;}
+.stApp:has(.store-title) .order-summary-card,.stApp:has(.store-title) [class*="st-key-cart_item_"] {background:white!important;border:1px solid #E3E7EE!important;border-radius:12px!important;box-shadow:none!important;}
+.stApp:has(.store-title) .summary-total b {color:#202B3D;}
+@media(max-width:760px) {.stApp:has(.store-title) .six-sauce-banner img {max-height:145px;object-fit:contain;}}

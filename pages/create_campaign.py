@@ -1,3 +1,4 @@
+from workspace_ui import workspace_header, apply_workspace
 import csv
 import io
 import os
@@ -15,224 +16,9 @@ import streamlit as st
 from ui import apply_theme, hero, page_steps, section_label
 
 
-apply_theme()
 
 # Page-specific HotVile dark theme. This intentionally overrides the generic
 # light theme so the campaign builder matches the branded sidebar/storefront.
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background: radial-gradient(ellipse at 12% 4%, rgba(214,40,40,.20), transparent 34%),
-                    radial-gradient(ellipse at 90% 20%, rgba(240,90,40,.10), transparent 30%),
-                    linear-gradient(145deg, #FFF9F1 0%, #FFFFFF 56%, #FFF9F1 100%) !important;
-        color: #2D211D !important;
-    }
-    .main .block-container { max-width: 1240px; padding-top: 2rem; padding-bottom: 4rem; }
-    .campaign-portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        margin: .8rem 0 1rem;
-    }
-    .campaign-portfolio-card {
-        min-height: 98px;
-        box-sizing: border-box;
-        padding: 1.1rem 1.25rem;
-        background: linear-gradient(145deg, #FFFFFF 0%, #FFF2E8 100%);
-        border: 1px solid rgba(255,145,95,.28);
-        border-left: 5px solid #F05A3A;
-        border-radius: 16px;
-        box-shadow: 0 6px 18px rgba(80,45,25,.08);
-    }
-    .campaign-portfolio-label {
-        color: #6B5A51 !important;
-        font-size: .9rem;
-        font-weight: 600;
-        margin-bottom: .45rem;
-    }
-    .campaign-portfolio-value {
-        color: #2D211D !important;
-        -webkit-text-fill-color: #2D211D !important;
-        font-size: 1.9rem;
-        line-height: 1.2;
-        font-weight: 750;
-    }
-    @media (max-width: 760px) {
-        .campaign-portfolio-grid { grid-template-columns: 1fr; }
-    }
-    .main .block-container h1, .main .block-container h2,
-    .main .block-container h3, .main .block-container h4,
-    .main .block-container p, .main .block-container span,
-    .main .block-container label, .main .block-container [data-testid=stMarkdownContainer],
-    .main .block-container [data-testid=stCaptionContainer] {
-        color: #2D211D;
-    }
-    .main .block-container [data-testid=stCaptionContainer] { color: #6B5A51 !important; }
-    .main .block-container h3 { color: #2D211D !important; }
-    /* Campaign portfolio metric cards: style the outer card and Streamlit's inner wrappers. */
-    .main .block-container div[data-testid="stMetric"],
-    .main .block-container div[data-testid="stMetric"] > div,
-    .main .block-container div[data-testid="stMetric"] > div > div {
-        background: linear-gradient(145deg, #FFFFFF 0%, #FFF2E8 100%) !important;
-        background-color: #FFFFFF !important;
-        border: 1px solid rgba(255,145,95,.28) !important;
-        border-left: 5px solid #F05A3A !important;
-        border-radius: 16px !important;
-        padding: 1rem 1.1rem !important;
-        box-shadow: 0 12px 28px rgba(0,0,0,.22) !important;
-    }
-    .main .block-container div[data-testid="stMetric"] * {
-        color: #2D211D !important;
-        -webkit-text-fill-color: #2D211D !important;
-    }
-    .main .block-container div[data-testid="stMetric"] label,
-    .main .block-container div[data-testid="stMetric"] [data-testid="stMetricLabel"],
-    .main .block-container div[data-testid="stMetric"] [data-testid="stMetricLabel"] * {
-        color: #6B5A51 !important;
-        -webkit-text-fill-color: #6B5A51 !important;
-    }
-    .main .block-container div[data-testid="stMetric"] [data-testid="stMetricValue"],
-    .main .block-container div[data-testid="stMetric"] [data-testid="stMetricValue"] * {
-        color: #2D211D !important;
-        -webkit-text-fill-color: #2D211D !important;
-        font-size: 1.9rem !important;
-        font-weight: 750 !important;
-    }
-    .main .block-container div[data-testid="stMetric"] [data-testid="stMetricDelta"],
-    .main .block-container div[data-testid="stMetric"] [data-testid="stMetricDelta"] * {
-        color: #F2A65A !important;
-        -webkit-text-fill-color: #F2A65A !important;
-    }
-    [data-testid=stForm] {
-        background: linear-gradient(150deg, rgba(255,255,255,.98), rgba(255,249,241,.98)) !important;
-        border: 1px solid rgba(255,145,95,.22) !important;
-        border-top: 5px solid #F05A3A !important;
-        border-radius: 18px; padding: 1.3rem;
-        box-shadow: 0 14px 32px rgba(0,0,0,.28);
-    }
-    [data-testid=stVerticalBlockBorderWrapper] {
-        background: rgba(42,30,26,.96) !important;
-        border: 1px solid rgba(255,145,95,.20) !important;
-        border-radius: 16px;
-    }
-    [data-baseweb=tab-list] {
-        gap: .45rem; background: rgba(255,255,255,.98) !important;
-        padding: .4rem; border: 1px solid rgba(255,145,95,.18);
-        border-radius: 14px;
-    }
-    [data-baseweb=tab] { color: #E9D9CE !important; font-weight: 800; }
-    [data-baseweb=tab][aria-selected=true] {
-        background: linear-gradient(135deg,#D62828,#F05A28) !important;
-        color: #FFFFFF !important; border-radius: 10px;
-    }
-    [data-baseweb=tab][aria-selected=true] * { color: #FFFFFF !important; }
-    /* Form labels and helper text */
-    [data-testid=stWidgetLabel] p, [data-testid=stWidgetLabel] label,
-    .stTextInput label, .stSelectbox label, .stDateInput label,
-    .stNumberInput label, [data-testid=stMarkdownContainer] p {
-        color: #F5E9DF !important;
-    }
-    [data-testid=stTextInput] input, [data-testid=stNumberInput] input,
-    [data-testid=stDateInput] input, [data-baseweb=select] > div {
-        background: #FFFFFF !important; color: #2D211D !important;
-        border-color: rgba(255,180,130,.35) !important;
-        border-radius: 9px !important;
-    }
-    [data-baseweb=select] input { color: #2D211D !important; }
-    [data-baseweb=select] svg { fill: #2D211D !important; }
-    [data-testid=stTextInput] input::placeholder { color: #B9AAA0 !important; }
-    [data-testid=stAlert] {
-        background: rgba(37,49,67,.95) !important;
-        border: 1px solid rgba(130,170,220,.25) !important;
-        color: #EAF2FF !important;
-    }
-    [data-testid=stAlert] * { color: #EAF2FF !important; }
-    div.stButton > button, div.stLinkButton > a,
-    [data-testid=stFormSubmitButton] > button,
-    [data-testid=stDownloadButton] > button {
-        border-radius: 10px; font-weight: 800; min-height: 2.7rem;
-    }
-    div.stButton > button[kind=primary],
-    [data-testid=stFormSubmitButton] > button[kind=primary] {
-        background: linear-gradient(90deg,#D62828,#F05A28) !important;
-        color: #FFFFFF !important; border: 0 !important;
-        box-shadow: 0 8px 20px rgba(211,48,35,.24);
-    }
-    [data-testid=stExpander] {
-        background: rgba(43,31,27,.96) !important;
-        border: 1px solid rgba(255,145,95,.22) !important;
-        border-radius: 14px;
-    }
-    [data-testid=stExpander] summary, [data-testid=stExpander] summary * {
-        color: #2D211D !important;
-    }
-    .brand-hero { margin-bottom: 1.4rem; }
-
-    /* Ready-to-share asset presentation */
-    .share-summary-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: .8rem;
-        margin: .7rem 0 1rem;
-    }
-    .share-summary-card {
-        background: linear-gradient(145deg, #FFFFFF 0%, #FFF2E8 100%);
-        border: 1px solid rgba(255,145,95,.28);
-        border-left: 5px solid #F05A3A;
-        border-radius: 14px;
-        padding: 1rem 1.1rem;
-        min-width: 0;
-    }
-    .share-summary-label {
-        color: #6B5A51 !important;
-        font-size: .84rem;
-        font-weight: 650;
-        margin-bottom: .4rem;
-    }
-    .share-summary-value {
-        color: #2D211D !important;
-        -webkit-text-fill-color: #2D211D !important;
-        font-size: 1.35rem;
-        line-height: 1.25;
-        font-weight: 800;
-        overflow-wrap: anywhere;
-    }
-    .share-asset-label {
-        color: #2D211D !important;
-        font-weight: 750;
-        margin: .9rem 0 .35rem;
-    }
-    .share-note {
-        color: #6B5A51 !important;
-        font-size: .84rem;
-        margin-top: .35rem;
-    }
-    [data-testid="stCodeBlock"] {
-        background: #FFFFFF !important;
-        border: 1px solid rgba(255,180,130,.28) !important;
-        border-radius: 10px !important;
-    }
-    [data-testid="stCodeBlock"] pre,
-    [data-testid="stCodeBlock"] code {
-        color: #2D211D !important;
-        white-space: pre-wrap !important;
-        overflow-wrap: anywhere !important;
-    }
-    .share-qr-panel {
-        background: linear-gradient(145deg, #FFFFFF 0%, #FFF2E8 100%);
-        border: 1px solid rgba(255,145,95,.28);
-        border-radius: 16px;
-        padding: 1rem;
-        text-align: center;
-    }
-    @media (max-width: 760px) {
-        .share-summary-grid { grid-template-columns: 1fr; }
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
@@ -326,18 +112,8 @@ active_campaigns = sum(
     if campaign_status(saved_campaign) == "Active"
 )
 
-hero(
-    "Build a trackable campaign",
-    "Create only the information the founder knows, then let the prototype generate the technical tracking assets automatically.",
-    "Campaign Builder",
-    icon="📣",
-)
+workspace_header('Campaigns', 'Plan a campaign, then share a trackable link, promo code, or QR code.', 'CAMPAIGN MANAGEMENT')
 
-page_steps([
-    ("🎯", "Choose", "Select the channel, dates, and planned budget."),
-    ("⚙️", "Generate", "Create the tracking link, QR code, and promo code."),
-    ("🚀", "Share", "Use the campaign assets in the selected channel."),
-])
 
 section_label("Campaign portfolio")
 st.markdown(
@@ -363,49 +139,61 @@ st.markdown(
 active_app_url = configured_app_url()
 current_host = urlsplit(active_app_url).hostname
 if current_host in ('127.0.0.1', 'localhost', '::1'):
-    st.info(
-        "You're running locally, so campaign links currently use localhost. "
-        "To generate shareable links, set APP_BASE_URL to your deployed "
-        "Streamlit HTTPS address in .streamlit/secrets.toml or your hosting secrets."
-    )
+    with st.expander("Sharing from a local preview"):
+        st.write("These links open on this computer. Use the deployed website to generate links that other people can open.")
+
 
 create_tab, saved_tab = st.tabs(["Create Campaign", "Saved Campaigns"])
 
 with create_tab:
     st.markdown("### Campaign details")
-    st.caption("The founder enters five business fields. Tracking IDs and link parameters are generated by the system.")
+    st.caption("Tracking assets are generated automatically after you save the campaign.")
 
-    with st.form("create_campaign_form"):
-        campaign_name = st.text_input(
-            "Campaign Name",
-            placeholder="Fall Farmers Market Promotion",
-        )
-        channel = st.selectbox(
-            "Marketing Channel",
-            list(CHANNEL_DETAILS.keys()),
-        )
-        icon, channel_description = CHANNEL_DETAILS[channel]
-        st.info(f"{icon} {channel_description}")
+    form_column, guide_column = st.columns([1.65, 1], gap="large")
+    with guide_column:
+        with st.container(border=True, key="workspace_panel_create_campaign_0"):
+            st.subheader("Your sharing assets")
+            st.caption("Created automatically when you save.")
+            st.markdown("**Tracking link**")
+            st.caption("Connect store visits and orders to this campaign.")
+            st.divider()
+            st.markdown("**Promo code**")
+            st.caption("A campaign reference customers can enter at checkout.")
+            st.divider()
+            st.markdown("**QR code**")
+            st.caption("Download a scannable link for events and print materials.")
+    with form_column:
+        with st.form("create_campaign_form"):
+            campaign_name = st.text_input(
+                "Campaign Name",
+                placeholder="Fall Farmers Market Promotion",
+            )
+            channel = st.selectbox(
+                "Marketing Channel",
+                list(CHANNEL_DETAILS.keys()),
+            )
+            icon, channel_description = CHANNEL_DETAILS[channel]
+            st.caption(channel_description)
 
-        date_col1, date_col2 = st.columns(2)
-        with date_col1:
-            start_date = st.date_input("Start Date", value=date.today())
-        with date_col2:
-            end_date = st.date_input("End Date", value=date.today())
+            date_col1, date_col2 = st.columns(2)
+            with date_col1:
+                start_date = st.date_input("Start Date", value=date.today())
+            with date_col2:
+                end_date = st.date_input("End Date", value=date.today())
 
-        budget = st.number_input(
-            "Planned Campaign Budget ($)",
-            min_value=0.0,
-            value=50.0,
-            step=10.0,
-            help="Enter the planned or allocated budget. This is not confirmed advertising expenditure.",
-        )
+            budget = st.number_input(
+                "Planned Campaign Budget ($)",
+                min_value=0.0,
+                value=50.0,
+                step=10.0,
+                help="Enter the planned or allocated budget. This is not confirmed advertising expenditure.",
+            )
 
-        create_button = st.form_submit_button(
-            "Create Campaign Assets",
-            type="primary",
-            width="stretch",
-        )
+            create_button = st.form_submit_button(
+                "Create Campaign Assets",
+                type="primary",
+                width="stretch",
+            )
 
     if create_button:
         if not campaign_name.strip():
@@ -470,7 +258,7 @@ with create_tab:
         details_col, qr_col = st.columns([1.45, 1], gap="large")
 
         with details_col:
-            with st.container(border=True):
+            with st.container(border=True, key="workspace_panel_create_campaign_1"):
                 st.markdown(f"**{campaign['campaign_name']}**")
 
                 st.markdown(
@@ -507,10 +295,10 @@ with create_tab:
                 )
 
         with qr_col:
-            with st.container(border=True):
+            with st.container(border=True, key="workspace_panel_create_campaign_2"):
                 st.markdown("**Campaign QR Code**")
                 qr_bytes = generate_qr_code(share_url)
-                st.image(qr_bytes, width="stretch")
+                st.image(qr_bytes, width=200)
                 st.download_button(
                     "⬇ Download QR Code",
                     data=qr_bytes,
@@ -536,7 +324,7 @@ with saved_tab:
     else:
         for saved_campaign in reversed(campaigns):
             status = campaign_status(saved_campaign)
-            with st.container(border=True):
+            with st.container(border=True, key=f"workspace_panel_create_campaign_3_{saved_campaign['campaign_id']}"):
                 name_col, channel_col, budget_col, status_col = st.columns(
                     [2.6, 1.5, 1.2, 1.2]
                 )
@@ -564,3 +352,5 @@ st.caption("Campaign budget is planned spending. The dashboard reports budget-ba
 
 from interaction_ui import apply_interactions
 apply_interactions()
+
+apply_workspace()

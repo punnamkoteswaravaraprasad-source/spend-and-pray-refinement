@@ -23,3 +23,13 @@ The older prototype repository and MRP deployment remain separate.
 ## Limits
 
 The public InsurAI login page was used as the interaction reference. Its authenticated dashboard was not inspected. Spend & Pray retains explicitly labeled demo access. CSV storage is ephemeral on Streamlit Cloud, single-process write locking does not provide multi-server persistence, and no payments or authentication are implemented. Budget-based ROAS does not measure profit or causation. Use fictional customer details only.
+
+
+## Internal workspace layout revision
+
+- Replaced decorative owner banners with compact, consistent page headers and a neutral canvas.
+- Owner entry opens the analytics dashboard directly. Shared panels, typography, controls, table styling and chart colors are used throughout.
+- Added a chart grid with separate revenue/order channel charts, separate dollar/ROAS campaign charts, and order volume.
+- Replaced the 150 expandable order blocks with a searchable table and a single review form. Matched, Unattributed, and Needs Review remain separate.
+- Extended isolated integration checks to cover status filtering, empty search, required evidence, and saving an order review.
+- Retained validation, cart linkage, idempotent writes, single-date bars, invalid-date warnings, filtered feedback, and N/A for zero-budget ROAS.

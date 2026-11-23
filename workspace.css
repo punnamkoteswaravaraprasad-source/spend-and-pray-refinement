@@ -1,0 +1,63 @@
+/* A quiet, consistent visual system for the owner workspace. */
+.stApp:has(.workspace-marker),[data-testid="stAppViewContainer"]:has(.workspace-marker),[data-testid="stMain"]:has(.workspace-marker) {background:#F5F6F9!important;color:#202B3D!important;}
+.stApp:has(.workspace-marker) .block-container {max-width:1440px;padding:2.3rem 2.5rem 4rem!important;}
+.stApp:has(.workspace-marker) h1 {font-size:2rem!important;letter-spacing:-.045em;line-height:1.2;color:#202B3D!important;padding:.3rem 0 .5rem;}
+.stApp:has(.workspace-marker) h2 {font-size:1.3rem!important;color:#202B3D!important;letter-spacing:-.025em;}
+.stApp:has(.workspace-marker) h3 {font-size:1.08rem!important;color:#202B3D!important;letter-spacing:-.015em;}
+.workspace-description {font-size:.95rem;color:#687488!important;margin-bottom:1.5rem;line-height:1.6;}
+.stApp:has(.workspace-marker) p,.stApp:has(.workspace-marker) label {color:#445166;}
+.stApp:has(.workspace-marker) [data-testid="stCaptionContainer"] p {font-size:.78rem;color:#758095!important;line-height:1.55;}
+.stApp:has(.workspace-marker) [data-testid="stVerticalBlockBorderWrapper"] > div {border-radius:12px!important;border-color:#E3E7EE!important;box-shadow:none!important;background:#FFFFFF;}
+.stApp:has(.workspace-marker) [data-testid="stMetric"] {background:#FFFFFF!important;border:1px solid #E3E7EE!important;border-top:1px solid #E3E7EE!important;box-shadow:none!important;padding:1.1rem 1.2rem!important;border-radius:12px!important;min-height:110px;}
+.stApp:has(.workspace-marker) [data-testid="stMetricLabel"] p {color:#697589!important;font-size:.78rem!important;font-weight:500!important;}
+.stApp:has(.workspace-marker) [data-testid="stMetricValue"] {color:#202B3D!important;font-size:1.75rem!important;font-weight:650!important;letter-spacing:-.045em;}
+.stApp:has(.workspace-marker) [data-testid="stForm"] {background:#FFFFFF!important;border:1px solid #E3E7EE!important;box-shadow:none!important;border-radius:12px!important;padding:1.6rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stExpander"] {background:#FFFFFF!important;border:1px solid #E3E7EE!important;border-radius:10px!important;box-shadow:none!important;}
+.stApp:has(.workspace-marker) button[kind="primary"] {background:#9D3439!important;border:1px solid #9D3439!important;box-shadow:none!important;border-radius:8px!important;}
+.stApp:has(.workspace-marker) button {box-shadow:none!important;font-weight:550!important;}
+.stApp:has(.workspace-marker) [data-baseweb="tab-list"] {gap:1.6rem;border-bottom:1px solid #E3E7EE;background:transparent;}
+.stApp:has(.workspace-marker) [data-baseweb="tab"] {font-size:.88rem;padding:.7rem 0;}
+.stApp:has(.workspace-marker) [data-testid="stDataFrame"] {border:1px solid #E3E7EE;border-radius:10px;overflow:hidden;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] {background:#FFFFFF!important;border-right:1px solid #E3E7EE;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] a {font-size:.88rem;padding:.65rem .8rem;margin:.15rem 0;border-radius:7px;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] a[aria-current="page"] {background:#F7ECEE!important;color:#913138!important;}
+.campaign-portfolio-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:.7rem 0 1.6rem;}
+.campaign-portfolio-card {background:white!important;border:1px solid #E3E7EE!important;border-radius:12px!important;padding:1.1rem 1.2rem!important;box-shadow:none!important;}
+.campaign-portfolio-label {font-size:.78rem!important;color:#697589!important;}
+.campaign-portfolio-value {font-size:1.75rem!important;color:#202B3D!important;font-weight:650;letter-spacing:-.04em;margin-top:.4rem;}
+.stApp:has(.workspace-marker) .section-label {background:none!important;box-shadow:none!important;padding:0!important;color:#687488!important;letter-spacing:.08em;font-size:.68rem;border-radius:0;}
+.stApp:has(.workspace-marker) .review-card {border:1px solid #E3E7EE!important;border-radius:10px!important;box-shadow:none!important;}
+.stApp:has(.workspace-marker) .review-comment {font-size:.88rem;}
+.share-summary-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0;}
+.share-summary-item,.generated-summary-card {padding:1rem;border:1px solid #E3E7EE;border-radius:10px;background:white;}
+.share-summary-label,.share-asset-label {font-size:.76rem;color:#697589;margin:.6rem 0;}
+.share-summary-value {font-size:1rem;font-weight:650;color:#202B3D;}
+@media(max-width:760px) {
+ .stApp:has(.workspace-marker) .block-container {padding:1.2rem .9rem 3rem!important;}
+ .stApp:has(.workspace-marker) h1 {font-size:1.65rem!important;}
+ .campaign-portfolio-grid,.share-summary-grid {grid-template-columns:1fr;}
+ .stApp:has(.workspace-marker) [data-testid="stMetric"] {min-height:90px;}
+}
+
+.stApp:has(.workspace-marker) [class*="st-key-workspace_panel_"] {background:#FFFFFF!important;border:1px solid #E3E7EE!important;border-radius:12px!important;box-shadow:none!important;}
+.stApp:has(.workspace-marker) [data-baseweb="select"] > div,.stApp:has(.workspace-marker) [data-testid="stDateInputField"],.stApp:has(.workspace-marker) [data-testid="stTextInput"] input,.stApp:has(.workspace-marker) [data-testid="stNumberInput"] input {background:#FFFFFF!important;border-color:#DEE3EA!important;border-radius:7px!important;}
+.stApp:has(.workspace-marker) [data-baseweb="tag"] {background:#EEF1F6!important;color:#445166!important;}
+.stApp:has(.workspace-marker) [data-baseweb="tag"] span {color:#445166!important;}
+.stApp:has(.workspace-marker) [data-testid="stPlotlyChart"] {border:0!important;border-radius:0!important;box-shadow:none!important;}
+
+@media(min-width:761px) {
+ .st-key-workspace_panel_marketing_dashboard_1,.st-key-workspace_panel_marketing_dashboard_2 {min-height:510px;}
+ .st-key-workspace_panel_marketing_dashboard_4,.st-key-workspace_panel_marketing_dashboard_5 {min-height:535px;}
+}
+
+.stApp:has(.workspace-marker) [data-testid="stCaptionContainer"] {opacity:1!important;}
+.stApp:has(.workspace-marker) [data-testid="stCaptionContainer"] p {color:#697589!important;}
+.stApp:has(.workspace-marker) button[kind="primary"] p,.stApp:has(.workspace-marker) button[kind="primary"] span {color:#FFFFFF!important;}
+.stApp:has(.workspace-marker) button:hover,.stApp:has(.workspace-marker) [data-testid="stMetric"]:hover {transform:none!important;}
+
+@media(max-width:760px) {
+ .st-key-workspace_metrics [data-testid="stHorizontalBlock"] {flex-direction:row!important;flex-wrap:wrap!important;}
+ .st-key-workspace_metrics [data-testid="stColumn"] {width:calc(50% - .5rem)!important;flex:1 1 calc(50% - .5rem)!important;min-width:0!important;}
+ .st-key-workspace_metrics [data-testid="stMetric"] {padding:.85rem!important;}
+ .st-key-workspace_metrics [data-testid="stMetricValue"] {font-size:1.35rem!important;}
+}
