@@ -25,7 +25,6 @@ def image_data_uri(path):
 
 
 def apply_theme():
-    page_background = image_data_uri("images/bold-attribution-background-v4.png")
     st.markdown(
         """
         <style>
@@ -38,42 +37,11 @@ def apply_theme():
         }
 
         .stApp {
-            background: #fffaf1;
-        }
-
-        [data-testid="stSidebar"] {
-            background:
-                radial-gradient(circle at 25% 12%, rgba(255,190,50,.28), transparent 24%),
-                linear-gradient(180deg, #8f151e 0%, #c52f24 46%, #ea6429 100%);
-            border-right: 1px solid rgba(255,211,90,.55);
-            box-shadow: 8px 0 30px rgba(108,25,20,.18);
-        }
-
-        [data-testid="stSidebar"] * {
-            color: #fff7eb;
-        }
-
-        [data-testid="stSidebarNav"] a:hover,
-        [data-testid="stSidebarNav"] a[aria-current="page"] {
-            background: rgba(255,255,255,.18);
-            border-radius: 10px;
-            box-shadow: inset 4px 0 0 #ffd34f;
-        }
-
-        [data-testid="stSidebarNav"] a {
-            min-height: 48px;
-            padding: .7rem 1rem;
-            font-size: 1.04rem;
-            font-weight: 650;
-            transition: transform .18s ease, background .18s ease;
-        }
-
-        [data-testid="stSidebarNav"] a:hover {
-            transform: translateX(5px);
+            background: #FFF9F1;
         }
 
         .block-container {
-            max-width: 1240px;
+            max-width: 1360px;
             padding-top: 2rem;
             padding-bottom: 4rem;
         }
@@ -174,8 +142,18 @@ def apply_theme():
             overflow: visible;
         }
 
+        body, p, label, input, textarea, button, [data-testid="stCaptionContainer"] {
+            font-size: 1rem;
+        }
+        h1 {font-size: clamp(2rem, 3vw, 2.8rem) !important;}
+        h2 {font-size: 1.65rem !important;}
+        h3 {font-size: 1.3rem !important;}
+        [data-testid="stMetricLabel"] {font-size: .95rem !important;font-weight: 750 !important;}
+        [data-testid="stMetricValue"] {font-size: 1.65rem !important;}
+        [data-testid="stSidebar"] {background:#F4E9DE !important;}
+        [data-testid="stSidebar"] * {color:#382923;}
         .brand-hero {
-            min-height: 210px;
+            min-height: 250px;
             padding: 2rem;
             border-radius: 26px;
             color: white;
@@ -221,7 +199,7 @@ def apply_theme():
         }
 
         .brand-hero h1 {
-            font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+            font-size: clamp(1.7rem, 3vw, 2.65rem);
             margin-top: .35rem;
             margin-bottom: .55rem;
             text-shadow: 0 3px 22px rgba(0,0,0,.38);
@@ -270,7 +248,7 @@ def apply_theme():
         }
 
         .role-description {
-            min-height: 0;
+            min-height: 58px;
             color: #5d4b42;
             font-size: 1rem;
             line-height: 1.55;
@@ -494,40 +472,21 @@ def apply_theme():
             margin: .8rem 0;
         }
 
-        @media (max-width: 760px), (pointer: coarse) and (max-width: 1100px) {
-            .block-container { width: 100%; max-width: 100%; padding: 1.15rem .85rem 3rem; }
-            [data-testid="stHorizontalBlock"] { flex-direction: column !important; align-items: stretch !important; gap: 1rem !important; }
-            [data-testid="stColumn"] { width: 100% !important; flex: 1 1 100% !important; min-width: 0 !important; }
-            .brand-hero { min-height: 230px; padding: 1.35rem; border-radius: 16px; background-position: 64% center; }
+        @media (max-width: 760px) {
+            .block-container { padding: 1.15rem .85rem 3rem; }
+            .brand-hero { min-height: 240px; padding: 1.35rem; border-radius: 16px; background-position: 64% center; }
             .hero-copy { max-width: 85%; }
-            .product-card { min-height: auto; padding: 1rem; }
-            .product-card p, .role-description { min-height: 0; }
-            .product-photo-wrap { height: clamp(250px, 75vw, 330px); margin: 0 auto .75rem; }
-            .product-photo { width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; }
+            button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #275ca8 !important; outline-offset: 3px; }
+        .product-card p { min-height: 74px; }
+        .product-card { min-height: auto; }
+            .role-description { min-height: auto; }
             .page-step-grid { grid-template-columns: 1fr; }
             .hero-icon { width: 54px; height: 54px; right: 1rem; bottom: 1rem; font-size: 1.65rem; }
-            .st-key-story_setup, .st-key-story_conflict, .st-key-story_resolution { padding: .8rem; }
         }
         </style>
         """,
         unsafe_allow_html=True,
     )
-    if page_background:
-        st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-image:
-                    linear-gradient(rgba(255,248,235,.38), rgba(255,248,235,.52)),
-                    url('{page_background}');
-                background-size: auto, cover;
-                background-attachment: fixed;
-                background-position: center, center top;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True,
-        )
 
 
 def hero(

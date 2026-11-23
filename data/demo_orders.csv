@@ -1,1 +1,151 @@
 order_id,order_date,customer_name,customer_email,items,order_total,promo_code,campaign_id,utm_source,utm_medium,utm_campaign,match_status
+ORD-7D4BF3BC,2026-11-15T14:45:00+00:00,Avery Johnson,avery.johnson1@example.com,Smoky Chipotle x1; Classic Red Hot Sauce x1,22.97,,,,,,Unattributed
+ORD-DEB278C8,2026-10-02T16:00:00+00:00,Jordan Miller,jordan.miller2@example.com,Mango Habanero x1; Smoky Chipotle x2; Classic Red Hot Sauce x1,37.96,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-D4B37C19,2026-10-10T14:45:00+00:00,Taylor Brooks,taylor.brooks3@example.com,Ghost Pepper x2; Mango Habanero x2,43.96,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-9AE51749,2026-10-30T20:15:00+00:00,Morgan Davis,morgan.davis4@example.com,Pineapple Jalapeño x2,25.97,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-5E739BD7,2026-10-25T14:30:00+00:00,Casey Wilson,casey.wilson5@example.com,Pineapple Jalapeño x1; Mango Habanero x1; Classic Red Hot Sauce x1,26.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-CF29FEA9,2026-10-04T15:15:00+00:00,Riley Thompson,riley.thompson6@example.com,Smoky Chipotle x1; Classic Red Hot Sauce x1,22.97,,,,,,Unattributed
+ORD-10D43C47,2026-10-26T10:45:00+00:00,Jamie Parker,jamie.parker7@example.com,Roasted Garlic x1,14.98,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-83EA23F2,2026-10-28T16:00:00+00:00,Cameron Reed,cameron.reed8@example.com,Ghost Pepper x2; Smoky Chipotle x1,35.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-3B5961A5,2026-10-16T13:45:00+00:00,Drew Bennett,drew.bennett9@example.com,Roasted Garlic x1,14.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-7EF7324C,2026-10-02T13:30:00+00:00,Quinn Foster,quinn.foster10@example.com,Mango Habanero x1; Ghost Pepper x2; Classic Red Hot Sauce x1,35.96,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-47558B2A,2026-10-09T20:15:00+00:00,Alex Morgan,alex.morgan11@example.com,Classic Red Hot Sauce x1; Mango Habanero x1; Pineapple Jalapeño x1,31.47,,,,,,Unattributed
+ORD-FD8F720E,2026-11-17T18:30:00+00:00,Sam Rivera,sam.rivera12@example.com,Ghost Pepper x1; Classic Red Hot Sauce x1; Mango Habanero x2,43.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-64C7D652,2026-11-16T14:00:00+00:00,Emerson Clark,emerson.clark13@example.com,Classic Red Hot Sauce x1; Pineapple Jalapeño x1; Mango Habanero x1,32.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-EC21FFC9,2026-11-06T16:15:00+00:00,Peyton Lewis,peyton.lewis14@example.com,Classic Red Hot Sauce x1,13.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-AA28623F,2026-10-10T14:45:00+00:00,Rowan Hayes,rowan.hayes15@example.com,Ghost Pepper x1,16.98,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-98833A61,2026-10-05T14:00:00+00:00,Skyler Adams,skyler.adams16@example.com,Roasted Garlic x1,14.98,,,,,,Unattributed
+ORD-A6EFB267,2026-10-17T14:45:00+00:00,Dakota Price,dakota.price17@example.com,Ghost Pepper x3; Classic Red Hot Sauce x1,47.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-F46B09C4,2026-11-16T17:00:00+00:00,Reese Cooper,reese.cooper18@example.com,Classic Red Hot Sauce x1; Roasted Garlic x1,24.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-AF2B4AB9,2026-10-27T17:45:00+00:00,Logan Bailey,logan.bailey19@example.com,Classic Red Hot Sauce x1,13.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-31B1986F,2026-10-20T14:15:00+00:00,Harper Kelly,harper.kelly20@example.com,Ghost Pepper x1; Mango Habanero x1,26.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-494570EA,2026-11-03T21:45:00+00:00,Avery Johnson,avery.johnson21@example.com,Classic Red Hot Sauce x2; Smoky Chipotle x1,26.97,,,,,,Unattributed
+ORD-1CE093FE,2026-10-20T17:30:00+00:00,Jordan Miller,jordan.miller22@example.com,Mango Habanero x1; Pineapple Jalapeño x2,31.47,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-F84783FB,2026-10-26T14:00:00+00:00,Taylor Brooks,taylor.brooks23@example.com,Ghost Pepper x1; Mango Habanero x1,26.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-18A82EC8,2026-11-02T17:45:00+00:00,Morgan Davis,morgan.davis24@example.com,Pineapple Jalapeño x1,15.48,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-C99A1B75,2026-10-09T19:15:00+00:00,Casey Wilson,casey.wilson25@example.com,Roasted Garlic x1,14.98,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-E2CA5032,2026-10-28T11:30:00+00:00,Riley Thompson,riley.thompson26@example.com,Mango Habanero x1,15.98,,,,,,Unattributed
+ORD-A107B2B3,2026-09-27T18:00:00+00:00,Jamie Parker,jamie.parker27@example.com,Smoky Chipotle x2; Roasted Garlic x1; Classic Red Hot Sauce x1,35.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-23251558,2026-10-12T18:30:00+00:00,Cameron Reed,cameron.reed28@example.com,Smoky Chipotle x1; Roasted Garlic x1; Classic Red Hot Sauce x1; Ghost Pepper x1,47.96,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-B05B3491,2026-11-16T13:30:00+00:00,Drew Bennett,drew.bennett29@example.com,Smoky Chipotle x1; Pineapple Jalapeño x1,25.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-52A444BC,2026-11-07T15:45:00+00:00,Quinn Foster,quinn.foster30@example.com,Roasted Garlic x1,14.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-99C8A074,2026-10-15T19:30:00+00:00,Alex Morgan,alex.morgan31@example.com,Ghost Pepper x1; Classic Red Hot Sauce x1,22.97,,,,,,Unattributed
+ORD-BE92BDA7,2026-10-05T20:45:00+00:00,Sam Rivera,sam.rivera32@example.com,Ghost Pepper x1; Pineapple Jalapeño x1,25.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-A010DF33,2026-11-02T12:45:00+00:00,Emerson Clark,emerson.clark33@example.com,Classic Red Hot Sauce x1,13.98,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-C7559976,2026-11-16T16:45:00+00:00,Peyton Lewis,peyton.lewis34@example.com,Roasted Garlic x3,29.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-1C461075,2026-11-11T19:00:00+00:00,Rowan Hayes,rowan.hayes35@example.com,Mango Habanero x1; Classic Red Hot Sauce x1,22.97,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-2B434CE9,2026-11-07T18:45:00+00:00,Skyler Adams,skyler.adams36@example.com,Smoky Chipotle x1; Roasted Garlic x1,24.97,,,,,,Unattributed
+ORD-690726DE,2026-10-21T10:00:00+00:00,Dakota Price,dakota.price37@example.com,Smoky Chipotle x2; Mango Habanero x1; Classic Red Hot Sauce x1,35.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-16AB14F8,2026-10-09T16:15:00+00:00,Reese Cooper,reese.cooper38@example.com,Smoky Chipotle x1; Roasted Garlic x2,29.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-8C891F2D,2026-11-17T13:30:00+00:00,Logan Bailey,logan.bailey39@example.com,Classic Red Hot Sauce x1; Smoky Chipotle x1,23.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-0317477A,2026-10-13T17:30:00+00:00,Harper Kelly,harper.kelly40@example.com,Smoky Chipotle x2; Roasted Garlic x1; Mango Habanero x1,43.96,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-F7EADA45,2026-11-15T11:45:00+00:00,Avery Johnson,avery.johnson41@example.com,Roasted Garlic x2; Mango Habanero x1,32.97,,,,,,Unattributed
+ORD-0E63809B,2026-11-06T14:00:00+00:00,Jordan Miller,jordan.miller42@example.com,Roasted Garlic x1; Pineapple Jalapeño x1; Ghost Pepper x1,35.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-514E917F,2026-11-18T20:30:00+00:00,Taylor Brooks,taylor.brooks43@example.com,Mango Habanero x1; Classic Red Hot Sauce x1,22.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-CD7576EB,2026-11-04T14:00:00+00:00,Morgan Davis,morgan.davis44@example.com,Classic Red Hot Sauce x1,13.98,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-5D163F82,2026-11-01T14:30:00+00:00,Casey Wilson,casey.wilson45@example.com,Roasted Garlic x1; Classic Red Hot Sauce x1,22.97,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-AE22A956,2026-10-08T12:00:00+00:00,Riley Thompson,riley.thompson46@example.com,Smoky Chipotle x1; Pineapple Jalapeño x1,25.97,,,,,,Unattributed
+ORD-586ADA1C,2026-10-24T17:30:00+00:00,Jamie Parker,jamie.parker47@example.com,Smoky Chipotle x1; Mango Habanero x1; Pineapple Jalapeño x1,31.47,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-08078665,2026-10-17T09:00:00+00:00,Cameron Reed,cameron.reed48@example.com,Smoky Chipotle x1; Roasted Garlic x1; Classic Red Hot Sauce x1,26.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-C31E8CCC,2026-10-11T18:00:00+00:00,Drew Bennett,drew.bennett49@example.com,Mango Habanero x1,15.98,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-D3AF4BDE,2026-11-10T21:45:00+00:00,Quinn Foster,quinn.foster50@example.com,Mango Habanero x1,15.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-8C153B57,2026-11-05T21:15:00+00:00,Alex Morgan,alex.morgan51@example.com,Mango Habanero x1; Pineapple Jalapeño x1,25.97,,,,,,Unattributed
+ORD-D720EC3B,2026-10-10T12:00:00+00:00,Sam Rivera,sam.rivera52@example.com,Roasted Garlic x2,24.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-2199F323,2026-10-09T11:30:00+00:00,Emerson Clark,emerson.clark53@example.com,Smoky Chipotle x1; Pineapple Jalapeño x1,25.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-946282A3,2026-10-26T18:00:00+00:00,Peyton Lewis,peyton.lewis54@example.com,Smoky Chipotle x1,14.48,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-A8DC3BCA,2026-10-29T10:00:00+00:00,Rowan Hayes,rowan.hayes55@example.com,Roasted Garlic x1; Classic Red Hot Sauce x2; Ghost Pepper x1,35.96,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-D61176AC,2026-10-03T20:30:00+00:00,Skyler Adams,skyler.adams56@example.com,Roasted Garlic x1; Smoky Chipotle x1,23.97,,,,,,Unattributed
+ORD-EADD2250,2026-11-07T15:00:00+00:00,Dakota Price,dakota.price57@example.com,Mango Habanero x1; Smoky Chipotle x1,23.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-34E39526,2026-10-23T12:15:00+00:00,Reese Cooper,reese.cooper58@example.com,Classic Red Hot Sauce x1,13.98,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-862075CC,2026-11-07T14:45:00+00:00,Logan Bailey,logan.bailey59@example.com,Roasted Garlic x1; Classic Red Hot Sauce x1; Ghost Pepper x2,47.96,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-6F2B2FF7,2026-10-09T09:15:00+00:00,Harper Kelly,harper.kelly60@example.com,Ghost Pepper x1; Classic Red Hot Sauce x1,22.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-895B1D93,2026-11-06T16:45:00+00:00,Avery Johnson,avery.johnson61@example.com,Classic Red Hot Sauce x1; Ghost Pepper x1,28.97,,,,,,Unattributed
+ORD-04522308,2026-10-20T10:00:00+00:00,Jordan Miller,jordan.miller62@example.com,Ghost Pepper x1; Mango Habanero x1,26.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-CEE2152B,2026-11-11T11:30:00+00:00,Taylor Brooks,taylor.brooks63@example.com,Classic Red Hot Sauce x1; Mango Habanero x1; Ghost Pepper x1; Roasted Garlic x1,39.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-BD7E9BCE,2026-10-26T09:30:00+00:00,Morgan Davis,morgan.davis64@example.com,Ghost Pepper x2,28.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-535F8DBD,2026-10-24T21:15:00+00:00,Casey Wilson,casey.wilson65@example.com,Pineapple Jalapeño x1,15.48,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-D2D3AE75,2026-10-31T20:00:00+00:00,Riley Thompson,riley.thompson66@example.com,Roasted Garlic x1; Smoky Chipotle x1; Mango Habanero x1,32.97,,,,,,Unattributed
+ORD-8A673FDF,2026-11-17T20:45:00+00:00,Jamie Parker,jamie.parker67@example.com,Classic Red Hot Sauce x1; Roasted Garlic x1,24.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-2516F11B,2026-09-27T13:15:00+00:00,Cameron Reed,cameron.reed68@example.com,Pineapple Jalapeño x1; Classic Red Hot Sauce x2,26.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-A7F906DA,2026-10-06T20:30:00+00:00,Drew Bennett,drew.bennett69@example.com,Ghost Pepper x1,16.98,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-8BC17D68,2026-10-20T18:45:00+00:00,Quinn Foster,quinn.foster70@example.com,Mango Habanero x1; Pineapple Jalapeño x1,25.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-B4675E83,2026-10-12T14:00:00+00:00,Alex Morgan,alex.morgan71@example.com,Smoky Chipotle x2; Classic Red Hot Sauce x1,26.97,,,,,,Unattributed
+ORD-834E1157,2026-11-12T09:15:00+00:00,Sam Rivera,sam.rivera72@example.com,Ghost Pepper x2,28.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-0E574C44,2026-10-11T17:45:00+00:00,Emerson Clark,emerson.clark73@example.com,Smoky Chipotle x2; Mango Habanero x1,32.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-5AF90E43,2026-10-21T11:30:00+00:00,Peyton Lewis,peyton.lewis74@example.com,Pineapple Jalapeño x1,15.48,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-1E984654,2026-11-03T20:15:00+00:00,Rowan Hayes,rowan.hayes75@example.com,Ghost Pepper x1; Roasted Garlic x1,24.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-922FF99D,2026-10-01T21:15:00+00:00,Skyler Adams,skyler.adams76@example.com,Mango Habanero x1; Roasted Garlic x1,24.97,,,,,,Unattributed
+ORD-3816E1DC,2026-10-27T18:30:00+00:00,Dakota Price,dakota.price77@example.com,Pineapple Jalapeño x1; Smoky Chipotle x1; Classic Red Hot Sauce x1; Roasted Garlic x1,39.96,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-4675E196,2026-10-16T15:30:00+00:00,Reese Cooper,reese.cooper78@example.com,Ghost Pepper x1; Roasted Garlic x1,24.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-3DB9832C,2026-10-24T11:30:00+00:00,Logan Bailey,logan.bailey79@example.com,Roasted Garlic x1,14.98,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-6955BE6E,2026-11-14T20:15:00+00:00,Harper Kelly,harper.kelly80@example.com,Pineapple Jalapeño x1; Ghost Pepper x2; Roasted Garlic x1,47.96,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-F68D03D2,2026-10-26T13:15:00+00:00,Avery Johnson,avery.johnson81@example.com,Pineapple Jalapeño x2; Mango Habanero x1; Classic Red Hot Sauce x1,35.96,,,,,,Unattributed
+ORD-360DA279,2026-10-12T09:00:00+00:00,Jordan Miller,jordan.miller82@example.com,Smoky Chipotle x1; Classic Red Hot Sauce x1,22.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-F1965BA8,2026-11-08T11:45:00+00:00,Taylor Brooks,taylor.brooks83@example.com,Ghost Pepper x1,16.98,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-D433D1A9,2026-10-11T11:45:00+00:00,Morgan Davis,morgan.davis84@example.com,Roasted Garlic x2,24.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-E66A3C23,2026-10-20T10:00:00+00:00,Casey Wilson,casey.wilson85@example.com,Ghost Pepper x1; Smoky Chipotle x1; Mango Habanero x1,32.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-DD72CCF1,2026-10-21T15:00:00+00:00,Riley Thompson,riley.thompson86@example.com,Pineapple Jalapeño x1,15.48,,,,,,Unattributed
+ORD-515CE8F1,2026-11-04T19:15:00+00:00,Jamie Parker,jamie.parker87@example.com,Roasted Garlic x1,14.98,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-E9C4D23B,2026-11-08T20:45:00+00:00,Cameron Reed,cameron.reed88@example.com,Roasted Garlic x1,14.98,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-DDB8608F,2026-11-03T14:00:00+00:00,Drew Bennett,drew.bennett89@example.com,Smoky Chipotle x1; Pineapple Jalapeño x2; Roasted Garlic x1,41.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-DFF816DD,2026-11-13T14:15:00+00:00,Quinn Foster,quinn.foster90@example.com,Smoky Chipotle x1; Pineapple Jalapeño x1; Roasted Garlic x1,29.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-6F133268,2026-10-04T09:30:00+00:00,Alex Morgan,alex.morgan91@example.com,Pineapple Jalapeño x1; Smoky Chipotle x1; Roasted Garlic x2,39.96,,,,,,Unattributed
+ORD-84EC2C11,2026-10-16T14:45:00+00:00,Sam Rivera,sam.rivera92@example.com,Roasted Garlic x2,24.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-5F253B24,2026-10-18T21:45:00+00:00,Emerson Clark,emerson.clark93@example.com,Mango Habanero x1; Smoky Chipotle x1,23.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-4687B825,2026-10-14T13:30:00+00:00,Peyton Lewis,peyton.lewis94@example.com,Classic Red Hot Sauce x2,22.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-116643B4,2026-09-27T15:45:00+00:00,Rowan Hayes,rowan.hayes95@example.com,Ghost Pepper x2; Roasted Garlic x1; Pineapple Jalapeño x1,47.96,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-54D2C734,2026-10-18T13:45:00+00:00,Skyler Adams,skyler.adams96@example.com,Classic Red Hot Sauce x1; Mango Habanero x1; Pineapple Jalapeño x1,31.47,,,,,,Unattributed
+ORD-CE5B0FD2,2026-10-14T14:00:00+00:00,Dakota Price,dakota.price97@example.com,Roasted Garlic x3; Mango Habanero x1,43.96,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-41099876,2026-10-23T09:00:00+00:00,Reese Cooper,reese.cooper98@example.com,Classic Red Hot Sauce x1; Mango Habanero x1,26.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-21BB711F,2026-10-17T16:30:00+00:00,Logan Bailey,logan.bailey99@example.com,Mango Habanero x1; Classic Red Hot Sauce x1,22.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-CBF3D8A7,2026-09-28T16:30:00+00:00,Harper Kelly,harper.kelly100@example.com,Roasted Garlic x1,14.98,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-BD19D767,2026-11-06T14:30:00+00:00,Avery Johnson,avery.johnson101@example.com,Smoky Chipotle x1; Roasted Garlic x1,24.97,,,,,,Unattributed
+ORD-7B9FCC18,2026-10-20T13:15:00+00:00,Jordan Miller,jordan.miller102@example.com,Mango Habanero x1; Ghost Pepper x1; Classic Red Hot Sauce x2,35.96,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-060F222D,2026-09-28T17:30:00+00:00,Taylor Brooks,taylor.brooks103@example.com,Ghost Pepper x1; Pineapple Jalapeño x1; Mango Habanero x1,32.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-45AD33BE,2026-11-18T17:00:00+00:00,Morgan Davis,morgan.davis104@example.com,Smoky Chipotle x1; Classic Red Hot Sauce x1,22.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-AC669307,2026-10-01T20:30:00+00:00,Casey Wilson,casey.wilson105@example.com,Smoky Chipotle x1; Mango Habanero x1; Ghost Pepper x1,35.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-3DA447EF,2026-10-06T18:45:00+00:00,Riley Thompson,riley.thompson106@example.com,Roasted Garlic x1,14.98,,,,,,Unattributed
+ORD-9DDAD576,2026-10-07T13:45:00+00:00,Jamie Parker,jamie.parker107@example.com,Pineapple Jalapeño x1; Smoky Chipotle x1,23.97,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-9BAD3DCA,2026-09-25T13:45:00+00:00,Cameron Reed,cameron.reed108@example.com,Roasted Garlic x1; Ghost Pepper x2,35.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-64C092F4,2026-11-09T16:30:00+00:00,Drew Bennett,drew.bennett109@example.com,Pineapple Jalapeño x1; Ghost Pepper x1; Smoky Chipotle x1,28.47,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-24CD4951,2026-10-08T09:15:00+00:00,Quinn Foster,quinn.foster110@example.com,Pineapple Jalapeño x2; Smoky Chipotle x2,41.96,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-93FB9CEE,2026-11-12T17:45:00+00:00,Alex Morgan,alex.morgan111@example.com,Classic Red Hot Sauce x1,13.98,,,,,,Unattributed
+ORD-423F82B7,2026-11-16T12:00:00+00:00,Sam Rivera,sam.rivera112@example.com,Ghost Pepper x1,16.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-D56C8C84,2026-10-06T10:00:00+00:00,Emerson Clark,emerson.clark113@example.com,Pineapple Jalapeño x1; Smoky Chipotle x1,23.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-F2541B2D,2026-11-12T09:30:00+00:00,Peyton Lewis,peyton.lewis114@example.com,Pineapple Jalapeño x1; Classic Red Hot Sauce x1,22.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-C0DFD200,2026-10-20T16:15:00+00:00,Rowan Hayes,rowan.hayes115@example.com,Mango Habanero x2,26.97,HOTDD787C,CMP-HV-IN01,influencer,influencer,creator_heat_challenge,Matched
+ORD-BC07F99E,2026-10-06T18:15:00+00:00,Skyler Adams,skyler.adams116@example.com,Roasted Garlic x1; Pineapple Jalapeño x1,25.97,,,,,,Unattributed
+ORD-A24F487A,2026-11-11T17:30:00+00:00,Dakota Price,dakota.price117@example.com,Mango Habanero x1,15.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-8014E5E1,2026-11-11T20:15:00+00:00,Reese Cooper,reese.cooper118@example.com,Mango Habanero x1,15.98,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-206C9C83,2026-11-10T16:30:00+00:00,Logan Bailey,logan.bailey119@example.com,Pineapple Jalapeño x2; Ghost Pepper x1,35.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-7176421E,2026-10-22T13:45:00+00:00,Harper Kelly,harper.kelly120@example.com,Roasted Garlic x1; Ghost Pepper x1,28.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-DCDC6199,2026-11-02T15:45:00+00:00,Avery Johnson,avery.johnson121@example.com,Mango Habanero x1,15.98,,,,,,Unattributed
+ORD-2E093B9B,2026-09-27T21:45:00+00:00,Jordan Miller,jordan.miller122@example.com,Pineapple Jalapeño x1,15.48,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-FE8DB420,2026-10-02T20:30:00+00:00,Taylor Brooks,taylor.brooks123@example.com,Roasted Garlic x1; Smoky Chipotle x1,23.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-279C4382,2026-11-16T11:30:00+00:00,Morgan Davis,morgan.davis124@example.com,Roasted Garlic x1; Ghost Pepper x1; Classic Red Hot Sauce x1,26.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-002DB9DB,2026-11-04T15:15:00+00:00,Casey Wilson,casey.wilson125@example.com,Mango Habanero x1; Pineapple Jalapeño x1,25.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-29E6103B,2026-11-10T09:15:00+00:00,Riley Thompson,riley.thompson126@example.com,Mango Habanero x2,26.97,,,,,,Unattributed
+ORD-23C943B7,2026-10-14T11:45:00+00:00,Jamie Parker,jamie.parker127@example.com,Classic Red Hot Sauce x1; Mango Habanero x1; Smoky Chipotle x1,28.47,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-C9A79EA7,2026-10-06T16:45:00+00:00,Cameron Reed,cameron.reed128@example.com,Classic Red Hot Sauce x1,13.98,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-510E4F45,2026-10-23T21:00:00+00:00,Drew Bennett,drew.bennett129@example.com,Classic Red Hot Sauce x1,13.98,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-362034D3,2026-10-18T16:30:00+00:00,Quinn Foster,quinn.foster130@example.com,Ghost Pepper x2; Mango Habanero x1; Smoky Chipotle x1,37.96,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-58177D73,2026-09-30T14:30:00+00:00,Alex Morgan,alex.morgan131@example.com,Classic Red Hot Sauce x1,13.98,,,,,,Unattributed
+ORD-2F59B712,2026-11-02T17:45:00+00:00,Sam Rivera,sam.rivera132@example.com,Smoky Chipotle x1; Mango Habanero x1; Pineapple Jalapeño x1,31.47,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-94B62D16,2026-11-03T13:15:00+00:00,Emerson Clark,emerson.clark133@example.com,Smoky Chipotle x3,28.47,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-876B8B18,2026-09-25T10:30:00+00:00,Peyton Lewis,peyton.lewis134@example.com,Classic Red Hot Sauce x1; Pineapple Jalapeño x1,25.97,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-6F88D80A,2026-11-08T17:15:00+00:00,Rowan Hayes,rowan.hayes135@example.com,Classic Red Hot Sauce x1,13.98,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-B0BE5500,2026-10-10T11:15:00+00:00,Skyler Adams,skyler.adams136@example.com,Smoky Chipotle x1,14.48,,,,,,Unattributed
+ORD-FC3C4BBD,2026-10-20T13:30:00+00:00,Dakota Price,dakota.price137@example.com,Classic Red Hot Sauce x1; Mango Habanero x1,26.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-675C88EF,2026-09-27T10:00:00+00:00,Reese Cooper,reese.cooper138@example.com,Mango Habanero x1,15.98,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-85319C66,2026-11-05T09:45:00+00:00,Logan Bailey,logan.bailey139@example.com,Mango Habanero x2; Ghost Pepper x1; Smoky Chipotle x1,37.96,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched
+ORD-61F2F5E3,2026-09-28T12:30:00+00:00,Harper Kelly,harper.kelly140@example.com,Pineapple Jalapeño x1; Mango Habanero x1; Roasted Garlic x1,29.97,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-2B3CB6BC,2026-10-09T19:45:00+00:00,Avery Johnson,avery.johnson141@example.com,Ghost Pepper x1,16.98,,,,,,Unattributed
+ORD-6564B565,2026-10-18T12:15:00+00:00,Jordan Miller,jordan.miller142@example.com,Roasted Garlic x1,14.98,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-8ACB291D,2026-10-29T20:30:00+00:00,Taylor Brooks,taylor.brooks143@example.com,Roasted Garlic x1; Ghost Pepper x1,28.97,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-972CBE52,2026-11-17T10:00:00+00:00,Morgan Davis,morgan.davis144@example.com,Ghost Pepper x1,16.98,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-1F5F7B5A,2026-11-13T15:45:00+00:00,Casey Wilson,casey.wilson145@example.com,Classic Red Hot Sauce x1,13.98,HOT40198B,CMP-HV-PS01,paid_social,paid_social,fall_flavor_launch,Matched
+ORD-DA26DC6E,2026-10-19T13:30:00+00:00,Riley Thompson,riley.thompson146@example.com,Ghost Pepper x1; Pineapple Jalapeño x1,25.97,,,,,,Unattributed
+ORD-48A5740A,2026-10-09T15:45:00+00:00,Jamie Parker,jamie.parker147@example.com,Mango Habanero x1; Pineapple Jalapeño x1,25.97,HOT40A09A,CMP-HV-FM01,farmers_market,qr,st_louis_market_tour,Matched
+ORD-F7A032C7,2026-10-08T14:30:00+00:00,Cameron Reed,cameron.reed148@example.com,Ghost Pepper x1; Roasted Garlic x1,24.97,HOT2FA584,CMP-HV-PP01,popup_event,qr,downtown_heat_popup,Matched
+ORD-863E62B2,2026-11-16T16:30:00+00:00,Drew Bennett,drew.bennett149@example.com,Ghost Pepper x2; Roasted Garlic x1,35.97,HOT9303C5,CMP-HV-PS02,paid_social,paid_social,holiday_gift_bundle,Matched
+ORD-1EF94F7F,2026-10-23T10:45:00+00:00,Quinn Foster,quinn.foster150@example.com,Mango Habanero x1,15.98,HOT5576A5,CMP-HV-IN02,influencer,influencer,recipe_creator_collab,Matched

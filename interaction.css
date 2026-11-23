@@ -1,0 +1,40 @@
+/* Shared interaction layer, inspired by the public InsurAI welcome screen. */
+.block-container {max-width:1440px;padding:2rem 2.2rem 3rem;}
+[data-testid="stSidebar"] {background:#f5eee7!important;}
+[data-testid="stSidebar"] a {border-radius:10px;}
+[data-testid="stSidebar"] a[aria-current="page"] {background:#f1dcd1!important;color:#892626!important;font-weight:700;}
+button,a,input,textarea {transition:box-shadow .15s ease,background-color .15s ease;}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible {outline:3px solid #2164b5!important;outline-offset:3px;}
+button[kind="primary"] {border-radius:12px;min-height:46px;box-shadow:0 4px 12px #9e2a2b20;}
+button:hover {box-shadow:0 4px 16px #48281f16;}
+[data-testid="stTextInput"] input,[data-testid="stNumberInput"] input {min-height:44px;}
+[data-testid="stForm"] {border:1px solid #e4d8ce!important;background:#fffdfb;border-radius:18px!important;padding:1.4rem!important;}
+[data-testid="stMetric"] {border:1px solid #e7dcd2;border-radius:16px;padding:1rem;background:white;}
+[data-testid="stMetricValue"] {font-size:clamp(1.35rem,2.3vw,2rem)!important;}
+.st-key-entry_card {background:white;padding:2rem!important;border-radius:24px!important;box-shadow:0 12px 40px #3a221610;border:1px solid #e7dcd2!important;}
+.welcome-panel {border-radius:26px;padding:2.5rem;background:linear-gradient(135deg,#441b17,#752925);color:#fff8ee;}
+.welcome-panel h1 {font-size:clamp(2rem,3.4vw,3.2rem);line-height:1.13;color:#fff8ee!important;margin:1.4rem 0;}
+.welcome-panel p {color:#f3dfd2!important;font-size:1.06rem;line-height:1.6;}
+.welcome-wordmark {font-size:1.35rem;font-weight:850;letter-spacing:.08em;}
+.welcome-wordmark span {font-size:.8rem;color:#ecd4c4;}
+.welcome-kicker {font-size:.75rem!important;letter-spacing:.14em;margin-top:2rem;}
+.welcome-panel img {width:100%;height:170px;object-fit:cover;border-radius:16px;margin:.7rem 0;}
+.welcome-features {display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem;}
+.welcome-features span {font-size:.78rem;border:1px solid #ffffff35;border-radius:20px;padding:.4rem .65rem;color:#fff8ee;}
+.brand-hero {min-height:200px!important;padding:2rem!important;}
+.hero-icon {display:none!important;}
+.brand-hero h1,.brand-hero p,.brand-hero .eyebrow {color:#fff8ee!important;}
+@media(max-width:760px),(pointer:coarse) and (max-width:1100px) {
+ .block-container {padding:1rem .85rem 3rem!important;}
+ [data-testid="stHorizontalBlock"] {flex-direction:column!important;}
+ [data-testid="stColumn"] {width:100%!important;flex:1 1 100%!important;min-width:0!important;}
+ .welcome-panel {padding:1.4rem;}
+ .welcome-panel h1 {font-size:2rem;}
+ .welcome-panel img {height:125px;}
+ .st-key-entry_card {padding:1.2rem!important;}
+ .campaign-portfolio-grid {grid-template-columns:1fr!important;}
+ [class*="st-key-sauce_card_"] [data-testid="stImage"] img {max-height:300px;width:100%;object-fit:contain;}
+ .brand-hero {min-height:160px!important;padding:1.3rem!important;}
+ .hero-copy {max-width:100%!important;}
+}
+@media(prefers-reduced-motion:reduce) {button,a,input,textarea {transition:none!important;}}

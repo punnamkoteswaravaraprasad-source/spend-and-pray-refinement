@@ -1,3 +1,4 @@
-streamlit
+streamlit>=1.50,<2
+pandas
 plotly
 qrcode[pil]
