@@ -5,7 +5,7 @@
 [data-testid="stSidebar"] a[aria-current="page"] {background:#f1dcd1!important;color:#892626!important;font-weight:700;}
 button,a,input,textarea {transition:box-shadow .15s ease,background-color .15s ease;}
 button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible {outline:3px solid #2164b5!important;outline-offset:3px;}
-button[kind="primary"] {border-radius:12px;min-height:46px;box-shadow:0 4px 12px #9e2a2b20;}
+button[kind="primary"] {background:linear-gradient(90deg,#9e2a2b,#b63b26)!important;color:#ffffff!important;border-radius:12px;min-height:46px;box-shadow:0 4px 12px #9e2a2b20;}
 button:hover {box-shadow:0 4px 16px #48281f16;}
 [data-testid="stTextInput"] input,[data-testid="stNumberInput"] input {min-height:44px;}
 [data-testid="stForm"] {border:1px solid #e4d8ce!important;background:#fffdfb;border-radius:18px!important;padding:1.4rem!important;}
@@ -38,3 +38,5 @@ button:hover {box-shadow:0 4px 16px #48281f16;}
  .hero-copy {max-width:100%!important;}
 }
 @media(prefers-reduced-motion:reduce) {button,a,input,textarea {transition:none!important;}}
+
+.heat-meter-label,.heat-meter-value {color:#704936!important;}
