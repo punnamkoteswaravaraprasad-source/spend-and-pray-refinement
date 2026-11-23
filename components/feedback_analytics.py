@@ -413,7 +413,7 @@ def display_recent_feedback(feedback):
         return
 
     cards = []
-    for response in comments[:8]:
+    for response in comments[:4]:
         try:
             rating = int(response.get("shopping_rating", 0))
         except (TypeError, ValueError):
@@ -572,28 +572,18 @@ def display_feedback_dashboard(order_ids=None):
             for label, count in metrics["source_counts"].most_common()
         ]
         if source_data:
-            fig = px.pie(
-                source_data, names="Source", values="Responses", hole=.58,
-                color_discrete_sequence=["#A92E2E", "#D65A31", "#D99A2B", "#6F8F72", "#8C6D62", "#C9B9AA"]
-            )
-            fig.update_layout(
-                template="plotly_white", paper_bgcolor="#FFFFFF", plot_bgcolor="#FFFFFF",
-                font=dict(color="#2D211D", size=12), legend_title=None,
-                margin=dict(l=5, r=5, t=10, b=10), height=280
-            )
-            st.plotly_chart(fig, width="stretch")
+            from workspace_ui import chart_style, show_chart
+            fig = px.bar(source_data, x="Responses", y="Source", orientation="h", color_discrete_sequence=["#287DFA"])
+            chart_style(fig,height=max(340,len(source_data)*35))
+            fig.update_yaxes(title="",autorange="reversed",showgrid=False)
+            fig.update_xaxes(title="Responses",rangemode="tozero",dtick=1)
+            show_chart(fig,"feedback_sources")
         else:
             st.info("No discovery-source responses yet.")
 
-    st.subheader("Attribution insights from feedback")
-    st.caption("Survey answers are self-reported. They add context but do not count as verified campaign matches or campaign ROAS.")
-    a1, a2, a3 = st.columns(3)
-    a1.metric("Campaign-matched orders", metrics["matched_count"])
-    a2.metric("Unattributed orders with a known reported source", metrics["recovered_count"])
-    a3.metric("Unknown source", metrics["unknown_count"])
-
-    st.subheader("Recent customer reviews")
-    display_recent_feedback(metrics["valid_feedback"])
-
-    with st.expander("View recovered self-reported sources"):
+    st.caption("Discovery sources are self-reported and do not change verified campaign attribution or ROAS.")
+    with st.expander("Read customer reviews"):
+        display_recent_feedback(metrics["valid_feedback"])
+    with st.expander("View self-reported source details"):
+        st.caption(f"{metrics['recovered_count']} unattributed orders have a known self-reported discovery source.")
         display_recovered_orders(metrics["recovered_orders"])

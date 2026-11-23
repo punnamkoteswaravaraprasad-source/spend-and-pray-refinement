@@ -56,6 +56,15 @@ with TemporaryDirectory(dir=root.parent) as tmp:
     a=page('pages/marketing_dashboard.py')
     assert len(a.get('plotly_chart'))>=6
     assert any(m.value=='150' for m in a.metric)
+    current,current_campaigns=process_orders()
+    campaign=current_campaigns[0]
+    a.multiselect[0].set_value([campaign['channel']]).run()
+    a.multiselect[1].set_value([campaign['campaign_name']]).run()
+    expected=[r for r in current if r['status']!='Matched' or r['campaign_id']==campaign['campaign_id']]
+    assert a.metric[0].value==f"${sum(r['revenue'] for r in expected):,.2f}"
+    assert len(a.get('plotly_chart'))>=6 and not a.exception
+    a.multiselect[0].set_value([]).run();a.multiselect[1].set_value([]).run()
+    print('PASS channel/campaign filters update KPI totals and visible graphs together')
     selected=a.date_input[0].value[0]
     a.date_input[0].set_value((selected,selected)).run()
     assert not a.exception,a.exception
@@ -76,7 +85,8 @@ with TemporaryDirectory(dir=root.parent) as tmp:
     print('PASS heat filter, cart, checkout, confirmation and linked order')
     for path in (copy/'data').glob('*.csv'):path.rename(path.with_suffix('.backup'))
     for name in ['app.py','pages/create_campaign.py','pages/hot_sauce_store.py','pages/marketing_dashboard.py','pages/order_matching.py']:page(name)
-    print('PASS missing CSV files on all five interfaces')
+    a=page('app.py');click(a,'Enter Business Owner View →')
+    print('PASS missing CSV files on all six interfaces, including the owner overview')
     # A nonempty order file with no parseable date also needs a stable state.
     with (copy/'data/demo_orders.csv').open('w',newline='',encoding='utf-8') as f:
         writer=csv.DictWriter(f,fieldnames=['order_id','order_date','order_total','campaign_id','promo_code'])

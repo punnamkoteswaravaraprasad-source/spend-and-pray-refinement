@@ -50,26 +50,41 @@ if st.session_state.user_role is None:
             st.caption("Demo access · No authentication · Use fictional customer details only.")
 else:
     if st.session_state.user_role == "Business Owner":
-        pages=[st.Page("pages/marketing_dashboard.py",title="Performance overview",default=True),
+        pages=[st.Page("pages/owner_overview.py",title="Dashboard",default=True),
+               st.Page("pages/marketing_dashboard.py",title="Analytics"),
                st.Page("pages/create_campaign.py",title="Create Campaign"),
                st.Page("pages/order_matching.py",title="Order Matching")]
     else:
         pages=[st.Page("pages/hot_sauce_store.py",title="HotVile Store",url_path="hot_sauce_store",default=True)]
     navigation = st.navigation(pages, position="hidden")
-    with st.sidebar:
-        st.markdown("### HOTVILE")
-        st.caption("SPEND & PRAY")
-        st.divider()
-        for page in pages:
-            st.page_link(page, label=page.title)
-        st.divider()
-        st.caption(st.session_state.user_role)
-        st.caption("Demo access · No authentication")
-        if st.button("Switch demo experience",width="stretch"):
-            st.session_state.user_role=None
-            st.session_state.campaign_tracking={}
-            st.session_state.last_campaign_signature=None
-            st.query_params.clear()
-            st.rerun()
+    if st.session_state.user_role == "Business Owner":
+        with st.sidebar:
+            st.markdown('<div class="sidebar-lockup"><div class="sidebar-monogram">HV</div><div><strong>HOTVILE</strong><small>Marketing intelligence</small></div></div>',unsafe_allow_html=True)
+            st.divider()
+            if st.session_state.user_role == "Business Owner":
+                st.caption("OVERVIEW")
+                st.page_link(pages[0],label="Dashboard",icon=":material/dashboard:")
+                st.caption("MARKETING OPERATIONS")
+                st.page_link(pages[2],label="Create Campaign",icon=":material/add_circle:")
+                st.page_link(pages[3],label="Order Matching",icon=":material/fact_check:")
+                st.page_link(pages[1],label="Analytics",icon=":material/bar_chart:")
+            else:
+                st.page_link(pages[0],label="HotVile Store",icon=":material/storefront:")
+            st.divider()
+            st.markdown('<div class="sidebar-profile">Business owner demo<small>No authentication · Fictional data</small></div>' if st.session_state.user_role == "Business Owner" else '<div class="sidebar-profile">HotVile customer<small>Demonstration store</small></div>',unsafe_allow_html=True)
+            if st.button("Switch demo experience",width="stretch"):
+                st.session_state.user_role=None
+                st.session_state.campaign_tracking={}
+                st.session_state.last_campaign_signature=None
+                st.query_params.clear()
+                st.rerun()
     navigation.run()
+    if st.session_state.user_role == "Customer":
+        with st.expander("Demo navigation"):
+            if st.button("Switch demo experience",width="stretch"):
+                st.session_state.user_role=None
+                st.session_state.campaign_tracking={}
+                st.session_state.last_campaign_signature=None
+                st.query_params.clear()
+                st.rerun()
     apply_interactions()

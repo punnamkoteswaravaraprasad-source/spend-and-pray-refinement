@@ -39,3 +39,8 @@ Run `python -m unittest discover -s tests -v` and `python scripts/verify_interfa
 ## Internal workspace refinement
 
 Owner screens share `workspace_ui.py` and `workspace.css`. The dashboard includes revenue trends, attribution breakdown, channel revenue and order comparisons, campaign budget/revenue comparisons, budget-based ROAS ranking, order volume, and filtered customer feedback. Order status filters use the same denominator for every chart and KPI. Product cards use restrained borders and no glow effects. The welcome screen was left unchanged during this internal-layout revision.
+
+
+## Supplied design references
+
+The owner workspace now follows the supplied InsurAI screenshots: navy grouped navigation, a dedicated overview with a dark hero and calculated tracking briefing, larger KPI cards with descriptions, and a separate Analytics page with filters, rate/revenue bars, and chart comparisons. Customer shopping has a separate orange-and-cream product-led storefront, inspired by the supplied sauce-store screenshot. No newsletter signup or discount offer is implemented. Technical explanations remain in expandable sections. Graphs and KPI totals share the same selected orders; the integration checklist verifies channel and campaign changes together.

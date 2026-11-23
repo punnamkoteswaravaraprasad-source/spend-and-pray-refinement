@@ -10,9 +10,9 @@ from attribution_engine import process_orders, calculate_kpis
 from dashboard_charts import revenue_chart
 from components.feedback_analytics import display_feedback_dashboard
 from reporting import amount
-from workspace_ui import workspace_header, apply_workspace, chart_style, show_chart, RED, BLUE, GREEN, MUTED
+from workspace_ui import workspace_header, apply_workspace, chart_style, show_chart, RED, BLUE, GREEN, MUTED, metric_tile, progress_panel
 
-workspace_header('Performance overview', 'Sales, campaign returns, and tracking quality in one connected view.', 'ANALYTICS')
+workspace_header('Analytics Dashboard', 'Filter orders and compare sales, campaigns, and attribution.', 'MARKETING INTELLIGENCE')
 results, campaigns = process_orders()
 frame = pd.DataFrame(results, columns=['order_id','order_date','revenue','status','campaign_id','campaign_name','channel'])
 frame['order_date'] = pd.to_datetime(frame['order_date'], errors='coerce', utc=True)
@@ -42,16 +42,26 @@ rows=filtered.to_dict('records')
 k=calculate_kpis(rows)
 budget=sum(amount(c.get('budget')) for c in selected_campaigns)
 roas=k['matched_revenue']/budget if budget else None
-st.caption(f"{len(filtered):,} orders in view · {start:%b %d, %Y} – {end:%b %d, %Y} · Fictional demonstration data")
-with st.container(key="workspace_metrics"):
-    a,b,c,d=st.columns(4)
-    a.metric('Total revenue',f"${k['total_revenue']:,.2f}")
-    b.metric('Orders',f"{k['total_orders']:,}")
-    c.metric('Attribution coverage',f"{k['coverage']:.1f}%")
-    d.metric('Budget-based ROAS',f'{roas:.2f}x' if roas is not None else 'N/A')
-st.caption('Campaign/channel filters narrow verified matches. Unattributed and review orders remain included unless excluded by status, because their source is unknown. ROAS uses full planned budgets, not actual spend or profit.')
+with st.container(key="analytics_tiles"):
+    a,b,c,d,e=st.columns(5)
+    metric_tile(a,'Total revenue',f"${k['total_revenue']:,.2f}",'Across selected orders','analytics_revenue',icon='money')
+    metric_tile(b,'Orders',str(k['total_orders']),'Orders in this selection','analytics_orders',icon='orders')
+    metric_tile(c,'Matched orders',str(k['matched_orders']),'Verified campaign connection','analytics_matched','green','check')
+    metric_tile(d,'Needs attention',str(k['unattributed_orders']+k['needs_review']),'Missing or conflicting tracking','analytics_attention','orange','alert')
+    metric_tile(e,'Attribution coverage',f"{k['coverage']:.1f}%",'Matched share of all orders','analytics_coverage','purple','chart')
+left,right=st.columns(2,gap='medium')
+with left:
+    progress_panel('Attribution quality','Rates across the selected orders.',[
+        ('Matched',k['coverage'],f"{k['coverage']:.1f}%",'#00B88C'),
+        ('Unattributed',k['unattributed_rate'],f"{k['unattributed_rate']:.1f}%",'#FF8A1E'),
+        ('Needs Review',k['needs_review_rate'],f"{k['needs_review_rate']:.1f}%",'#8654F7')],'analytics_rates')
+with right:
+    share=k['matched_revenue']/k['total_revenue']*100 if k['total_revenue'] else 0
+    progress_panel('Revenue distribution','Revenue with and without a verified match.',[
+        ('Matched revenue',share,f"${k['matched_revenue']:,.2f}",'#287DFA'),
+        ('Unverified revenue',100-share if k['total_revenue'] else 0,f"${k['total_revenue']-k['matched_revenue']:,.2f}",'#FF8A1E')],'analytics_revenue_split')
 matched=filtered[filtered['status']=='Matched']
-left,right=st.columns([1.65,1],gap='medium')
+left,right=st.columns(2,gap='medium')
 with left:
     with st.container(border=True, key="workspace_panel_marketing_dashboard_1"):
         st.subheader('Revenue over time')
@@ -63,13 +73,20 @@ with left:
         st.caption(note)
 with right:
     with st.container(border=True, key="workspace_panel_marketing_dashboard_2"):
-        st.subheader('Order attribution')
-        fig=go.Figure(go.Pie(labels=['Matched','Unattributed','Needs Review'],values=[k['matched_orders'],k['unattributed_orders'],k['needs_review']],hole=.76,sort=False,marker_colors=[GREEN,MUTED,'#C5994F'],textinfo='none',hovertemplate='%{label}<br>%{value} orders · %{percent}<extra></extra>'))
-        chart_style(fig,height=285)
-        fig.update_layout(margin=dict(l=10,r=10,t=15,b=45),legend=dict(orientation='h',y=-.15,x=.5,xanchor='center'),annotations=[dict(text=f"<b>{k['coverage']:.0f}%</b><br>matched",x=.5,y=.5,showarrow=False,font_size=22,font_color='#202B3D')])
-        show_chart(fig,'attribution')
-        st.caption(f"Matched {k['matched_orders']} · Unattributed {k['unattributed_orders']} · Needs Review {k['needs_review']}")
-        st.caption(f"Unattributed rate {k['unattributed_rate']:.1f}% · Needs Review Rate {k['needs_review_rate']:.1f}%")
+        st.subheader('Order volume over time')
+        daily=filtered.dropna(subset=['order_date']).copy()
+        daily['Date']=daily['order_date'].dt.strftime('%Y-%m-%d')
+        counts=daily.groupby('Date').size()
+        fig=go.Figure()
+        if len(counts)==1: fig.add_bar(x=counts.index,y=counts.values,marker_color=BLUE)
+        elif len(counts)>1: fig.add_scatter(x=counts.index,y=counts.values,mode='lines+markers',line_color=BLUE)
+        chart_style(fig,height=340)
+        fig.update_xaxes(title='Date',type='date' if len(counts)>1 else 'category',tickformat='%b %d')
+        fig.update_yaxes(title='Orders',rangemode='tozero',dtick=1 if len(counts) and max(counts)<10 else None)
+        show_chart(fig,'order_volume')
+        if len(counts)==1: st.caption('Only one date is available; the bar shows its actual order count, not a trend.')
+        elif counts.empty: st.caption('No valid dated orders in this selection.')
+
 
 st.subheader('Channel performance')
 channel=matched.groupby('channel',as_index=False).agg(revenue=('revenue','sum'),orders=('order_id','count')).sort_values('revenue')
@@ -129,25 +146,10 @@ with st.expander('View campaign details'):
     details['ROAS']=details['ROAS'].map(lambda x:f'{x:.2f}x' if pd.notna(x) else 'N/A')
     st.dataframe(details,hide_index=True,width='stretch')
 
-with st.container(border=True, key="workspace_panel_marketing_dashboard_6"):
-    st.subheader('Order volume over time')
-    daily=filtered.dropna(subset=['order_date']).copy()
-    daily['Date']=daily['order_date'].dt.strftime('%Y-%m-%d')
-    counts=daily.groupby('Date').size()
-    fig=go.Figure()
-    if len(counts)==1: fig.add_bar(x=counts.index,y=counts.values,marker_color=BLUE)
-    elif len(counts)>1: fig.add_scatter(x=counts.index,y=counts.values,mode='lines+markers',line_color=BLUE)
-    chart_style(fig,height=260)
-    fig.update_xaxes(title='Date',type='date' if len(counts)>1 else 'category',tickformat='%b %d')
-    fig.update_yaxes(title='Orders',rangemode='tozero',dtick=1 if len(counts) and max(counts)<10 else None)
-    show_chart(fig,'order_volume')
-    if len(counts)==1: st.caption('Only one date is available; the bar shows its actual order count, not a trend.')
-    elif counts.empty: st.caption('No valid dated orders in this selection.')
-
 with st.container(border=True, key="workspace_panel_marketing_dashboard_7"):
     display_feedback_dashboard(filtered['order_id'].tolist())
 with st.expander('Metric definitions and demo limitations'):
     st.write('Attribution coverage = matched orders ÷ selected orders × 100. Unattributed and Needs Review rates use the same order denominator. Average order value = total revenue ÷ selected orders.')
     st.write(f"Matched revenue: ${k['matched_revenue']:,.2f} · Planned budget: ${budget:,.2f} · Average order value: ${k['average_order_value']:,.2f}")
-    st.write('Fictional seed data and demonstration checkouts only. Attribution is an association, not causation. No actual advertising spend, costs, authentication, payments, or durable cloud database are recorded.')
+    st.write('Campaign/channel filters narrow verified matches; unverified orders remain unless excluded by status. Fictional seed data and demonstration checkouts only. Attribution is an association, not causation. No actual advertising spend, costs, authentication, payments, or durable cloud database are recorded.')
 apply_workspace()

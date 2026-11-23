@@ -33,3 +33,13 @@ The public InsurAI login page was used as the interaction reference. Its authent
 - Replaced the 150 expandable order blocks with a searchable table and a single review form. Matched, Unattributed, and Needs Review remain separate.
 - Extended isolated integration checks to cover status filtering, empty search, required evidence, and saving an order review.
 - Retained validation, cart linkage, idempotent writes, single-date bars, invalid-date warnings, filtered feedback, and N/A for zero-budget ROAS.
+
+
+## Supplied-reference revision
+
+- Added a dedicated owner Dashboard and retained Analytics as a separate filtered chart page.
+- Navy grouped sidebar, white analytics header, icon KPI cards, calculated tracking briefing, and rate/revenue progress panels match the supplied visual direction.
+- Removed the duplicated attribution donut from Analytics; order volume now sits beside the revenue trend. Other graphs remain visible beneath filters.
+- Customer view uses separate storefront navigation and a product-led orange/cream hero. Owner navigation is absent from the customer storefront; demo switching is inside a footer expander.
+- No added newsletter, phone or birthday fields, simulated discounts, authentication claims or AI-analysis claims.
+- Automated checks include six interfaces, channel/campaign graph and KPI synchronization, search/review evidence validation, checkout linkage, invalid dates, single-date and empty selections.

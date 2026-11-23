@@ -420,35 +420,6 @@ if STORE_BACKGROUND.exists():
 
 
 # ---------------------------------------------------------
-# BRAND HEADER + HERO
-# ---------------------------------------------------------
-st.markdown(
-    """
-    <div class="brand-topline">
-      <div class="brand-logo">HOT<span>VILE</span></div>
-      <div class="brand-tag">Small batch · Big flavor</div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-# Six-sauce promotional banner (customer storefront only).
-if BANNER_FILE.exists():
-    banner_encoded = base64.b64encode(BANNER_FILE.read_bytes()).decode("ascii")
-    st.markdown(
-        f"""
-        <div class="six-sauce-banner">
-            <img src="data:image/png;base64,{banner_encoded}"
-                 alt="HotVile banner featuring all six hot sauce flavors">
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-else:
-    st.warning("The six-sauce banner is missing from the images folder.")
-
-
-# ---------------------------------------------------------
 # CAMPAIGN TRACKING
 # ---------------------------------------------------------
 params = st.query_params
@@ -541,23 +512,19 @@ if st.session_state.get("last_order"):
     st.text(f"Items: {confirmed['items']}")
     st.text(f"Total: ${float(confirmed['order_total']):.2f}")
     st.caption("Demonstration order only. No payment was collected.")
-st.markdown('<div class="store-kicker">Small batch · Big flavor</div>', unsafe_allow_html=True)
-st.markdown('<h1 class="store-title">Find Your Heat.</h1>', unsafe_allow_html=True)
-st.markdown(
-    '<p class="store-subtitle">Bold, handcrafted hot sauces made to bring every meal to life.</p>',
-    unsafe_allow_html=True,
-)
-st.markdown(
-    '<div class="prototype-note"><b>Prototype store:</b> You can explore products and place a demo order. '
-    'No real payment is collected.</div>',
-    unsafe_allow_html=True,
-)
-
+from ui import image_data_uri
+bag_count=sum(st.session_state.cart.values())
+feature_image=image_data_uri('images/mango-habanero-hotvile-v3.png')
+st.markdown(f'''<div class="storefront-shell">
+<div class="shop-announcement">SMALL BATCH. BIG FLAVOR. FIND YOUR HEAT.</div>
+<nav class="shop-nav"><div class="shop-wordmark">HOTVILE</div><div><a href="#sauce-collection">HOT SAUCES</a><a href="#your-bag">YOUR BAG ({bag_count})</a></div></nav>
+<section class="shop-hero"><div class="shop-hero-copy"><span>SIX SAUCES. ENDLESS POSSIBILITIES.</span><h1 class="store-title">TURN UP<br>THE FLAVOR.</h1><p>From mellow and smoky to bright and fiery. Find your everyday favorite.</p><a class="shop-cta" href="#sauce-collection">SHOP THE SAUCES <span>↗</span></a><small>Demonstration store · No real payments</small></div><div class="shop-feature"><img src="{feature_image}" alt="HotVile Mango Habanero hot sauce bottle with its branded label"><span class="shop-feature-tag">MEET YOUR<br>NEW FAVORITE.</span></div></section>
+</div>''',unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # PRODUCT COLLECTION
 # ---------------------------------------------------------
-st.markdown('<div class="section-kicker">The lineup</div>', unsafe_allow_html=True)
+st.markdown('<div id="sauce-collection" class="section-kicker">The lineup</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-heading">Pick your perfect heat.</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="section-copy">Six signature sauces. Find the flavor and heat that fit your table.</div>',
@@ -643,7 +610,7 @@ for row_start in range(0, len(visible_products), 3):
 # ---------------------------------------------------------
 # INTERACTIVE CART + PREMIUM DEMO CHECKOUT
 # ---------------------------------------------------------
-st.markdown('<div class="section-kicker">Your selections</div>', unsafe_allow_html=True)
+st.markdown('<div id="your-bag" class="section-kicker">Your selections</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-heading">Your cart.</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="section-copy">A few good choices. Review your sauces before placing your order.</div>',
