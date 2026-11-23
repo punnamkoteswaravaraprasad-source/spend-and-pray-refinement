@@ -149,3 +149,5 @@
 .stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] [data-testid="stMetricLabel"] {width:calc(100% - 42px);min-height:36px;}
 .stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] [data-testid="stMetricLabel"] p {white-space:normal!important;overflow:visible!important;text-overflow:unset!important;padding-right:0!important;line-height:1.4;}
 .stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {min-height:190px;}
+
+.stApp:has(.workspace-marker) .st-key-owner_hero a[data-testid="stPageLink-NavLink"] * {color:#FFFFFF!important;opacity:1!important;}
