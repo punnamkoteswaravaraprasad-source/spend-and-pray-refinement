@@ -44,3 +44,8 @@ Owner screens share `workspace_ui.py` and `workspace.css`. The dashboard include
 ## Supplied design references
 
 The owner workspace now follows the supplied InsurAI screenshots: navy grouped navigation, a dedicated overview with a dark hero and calculated tracking briefing, larger KPI cards with descriptions, and a separate Analytics page with filters, rate/revenue bars, and chart comparisons. Customer shopping has a separate orange-and-cream product-led storefront, inspired by the supplied sauce-store screenshot. No newsletter signup or discount offer is implemented. Technical explanations remain in expandable sections. Graphs and KPI totals share the same selected orders; the integration checklist verifies channel and campaign changes together.
+
+
+## HotVile brand alignment
+
+The current shared palette is white, charcoal/black and flame orange. Owner navigation, page headers, KPI accents, graph colors and controls use HotVile's palette. The copied navy treatment and duplicate hero summary were removed. The landing page introduces HotVile's sauce collection, heat range and product imagery first; Spend & Pray is described as the supporting owner workspace beneath the collection preview. The customer storefront layout is retained. Analytics filters still update graphs and totals together.

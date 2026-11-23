@@ -43,3 +43,8 @@ The public InsurAI login page was used as the interaction reference. Its authent
 - Customer view uses separate storefront navigation and a product-led orange/cream hero. Owner navigation is absent from the customer storefront; demo switching is inside a footer expander.
 - No added newsletter, phone or birthday fields, simulated discounts, authentication claims or AI-analysis claims.
 - Automated checks include six interfaces, channel/campaign graph and KPI synchronization, search/review evidence validation, checkout linkage, invalid dates, single-date and empty selections.
+
+
+## Unified HotVile palette and landing page
+
+Replaced the split marketing-demo welcome screen with a HotVile-first brand page, product imagery, three flavor previews, a shopping action and secondary owner access. Owner screens use white/black/orange instead of navy/blue; the repeated overview summary strip is removed. Shared palette changes retain the existing datasets, filters, customer cart and attribution logic. Regression and isolated integration checks passed before deployment.

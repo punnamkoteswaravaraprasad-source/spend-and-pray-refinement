@@ -1,0 +1,70 @@
+/* HotVile's shared brand: white, charcoal, and flame orange. */
+:root {--hv-ink:#1D1B19;--hv-orange:#EE512E;--hv-paper:#FFFFFF;--hv-line:#E8E1DA;}
+.stApp:has(.hotvile-landing-marker) {background:#FFFFFF!important;}
+.stApp:has(.hotvile-landing-marker) .block-container {max-width:1500px;padding:.5rem 1.8rem 3rem!important;}
+.landing-announcement {background:#EE512E;color:#FFFFFF;text-align:center;padding:.75rem;font-size:.7rem;font-weight:750;letter-spacing:.15em;}
+.landing-brand {color:#1D1B19;font-weight:950;font-style:italic;letter-spacing:-.055em;font-size:2.15rem;margin:1rem .2rem;}
+.landing-brand span {display:inline-block;margin-left:1rem;font-style:normal;font-size:.6rem;letter-spacing:.13em;font-weight:600;vertical-align:middle;}
+.stApp:has(.hotvile-landing-marker) button {border-radius:6px!important;box-shadow:none!important;transform:none!important;border-color:#292522!important;font-weight:650;}
+.stApp:has(.hotvile-landing-marker) button[kind="primary"] {background:#EE512E!important;border-color:#EE512E!important;}
+.stApp:has(.hotvile-landing-marker) button[kind="primary"] p {color:#FFFFFF!important;}
+.st-key-hotvile_landing_hero {background:#1D1B19;border-radius:12px;padding:2.7rem!important;margin:.4rem 0 2.3rem;overflow:hidden;}
+.landing-eyebrow {font-size:.65rem;letter-spacing:.17em;font-weight:750;color:#F98763;margin-bottom:1.1rem;}
+.stApp .st-key-hotvile_landing_hero .landing-headline {font-size:clamp(2.6rem,4.8vw,5rem)!important;line-height:.98!important;letter-spacing:-.055em!important;color:#FFFFFF!important;font-weight:900!important;margin:.4rem 0 1.3rem;}
+.landing-headline .flavor-orange {color:#FF7048!important;}
+.stApp .landing-intro {color:#E0D5CC!important;font-size:1.02rem;line-height:1.7;max-width:480px;}
+.st-key-hotvile_landing_hero button {max-width:310px;min-height:48px;margin:.75rem 0;}
+.landing-hero-notes {font-size:.65rem;color:#B8A99E;letter-spacing:.08em;margin-top:1rem;}
+.landing-hero-notes span {color:#EE512E;margin:0 .6rem;}
+.landing-bottles {position:relative;padding:.8rem 0;}
+.landing-bottles img {display:block;width:100%;min-height:250px;object-fit:cover;border-radius:10px;}
+.landing-stamp {position:absolute;right:0;bottom:-1.2rem;padding:1.2rem;background:#EE512E;color:white;border-radius:50%;font-size:.78rem;font-weight:850;line-height:1.25;transform:rotate(10deg);text-align:center;}
+.landing-collection-intro {padding:.8rem .2rem 1.4rem;}
+.landing-collection-intro > span {color:#C74928;font-size:.65rem;letter-spacing:.17em;font-weight:700;}
+.stApp .landing-collection-intro h2 {font-size:2rem;letter-spacing:-.035em;color:#211D19;margin:.5rem 0;}
+.landing-collection-intro p {color:#77695E;}
+.landing-flavor {border:1px solid #EBE5DE;border-radius:10px;overflow:hidden;height:100%;background:white;}
+.landing-flavor-photo {height:230px;background:#FCF6EC;}
+.landing-flavor-photo img {height:100%;width:100%;object-fit:contain;}
+.landing-flavor-details {padding:1.2rem 1.4rem;}
+.landing-flavor-details small {font-size:.62rem;letter-spacing:.1em;font-weight:700;color:#C94B2E;}
+.stApp .landing-flavor-details h3 {color:#211D19;font-size:1.2rem;letter-spacing:-.02em;margin:.4rem 0 .6rem;}
+.landing-flavor-details p {color:#77695E;font-size:.86rem;line-height:1.6;}
+.st-key-landing_owner_band {border-top:1px solid #E8E1DA;background:#FBF9F6;border-radius:8px;padding:1.7rem!important;margin:2rem 0 1rem;}
+.st-key-landing_owner_band .landing-eyebrow {color:#C94B2E;margin-bottom:.5rem;}
+.st-key-landing_owner_band h3 {color:#211D19;font-size:1.35rem;}
+.st-key-landing_owner_band p {color:#77695E;font-size:.9rem;line-height:1.6;max-width:680px;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] {background:#191817!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"][aria-current] {background:#3A291F!important;}
+.sidebar-monogram {background:#2A221D!important;color:#FF9977!important;border-color:#75442D!important;}
+.stApp:has(.workspace-marker) .st-key-owner_hero {background:#FFFFFF!important;border:1px solid #E8E1DA;border-top:4px solid #EE512E;border-radius:12px;padding:1.8rem 2rem!important;}
+.stApp:has(.workspace-marker) .st-key-owner_hero h1 {color:#211D19!important;font-size:2.4rem!important;}
+.stApp:has(.workspace-marker) .st-key-owner_hero p {color:#77695E!important;font-size:.95rem;}
+.st-key-owner_hero .hero-kicker {color:#C54A2B;}
+.st-key-owner_hero .hero-kicker > span {background:#EE512E;box-shadow:none;}
+.st-key-owner_hero [data-testid="stPageLink"] a {background:#EE512E!important;border-color:#EE512E!important;}
+.stApp:has(.workspace-marker) .st-key-owner_hero a[data-testid="stPageLink-NavLink"] * {color:#FFFFFF!important;}
+.tile-icon,.tile-icon.green,.tile-icon.purple,.tile-icon.orange {background:#FFF0E7!important;color:#C94C2E!important;}
+.stApp:has(.workspace-marker) .tracking-brief {background:#211D19;border-color:#211D19;}
+.stApp:has(.workspace-marker) .tracking-brief .brief-title {color:#FFFFFF;}
+.stApp:has(.workspace-marker) .tracking-brief .brief-title span {color:#F9906B;border-color:#75442D;background:#31251E;}
+.stApp:has(.workspace-marker) .tracking-brief p {color:#D5C6BB!important;}
+.stApp:has(.workspace-marker) .tracking-brief .brief-recommendation {color:#FFFFFF;border-color:#EE512E;}
+.stApp:has(.workspace-marker) button[kind="primary"] {background:#EE512E!important;border-color:#EE512E!important;}
+.stApp:has(.workspace-marker) .analytics-header {border-top:3px solid #EE512E;}
+.header-kicker {color:#C94C2E!important;}
+@media(max-width:760px) {
+ .stApp:has(.hotvile-landing-marker) .block-container {padding:.3rem .8rem 2rem!important;}
+ .landing-brand {font-size:1.85rem;margin:.5rem 0;}
+ .landing-brand span {font-size:.55rem;}
+ .st-key-hotvile_landing_hero {padding:1.5rem!important;}
+ .stApp .st-key-hotvile_landing_hero .landing-headline {font-size:2.8rem!important;}
+ .landing-bottles img {min-height:180px;}
+ .landing-stamp {padding:.9rem;font-size:.65rem;bottom:-.7rem;}
+ .landing-collection-intro h2 {font-size:1.6rem!important;}
+ .stApp:has(.workspace-marker) .st-key-owner_hero {padding:1.25rem!important;}
+ .stApp:has(.workspace-marker) .st-key-owner_hero h1 {font-size:1.8rem!important;}
+}
+
+.landing-bottles img {object-fit:contain;min-height:0;height:auto;}
+.stApp:has(.hotvile-landing-marker) button[kind="primary"],.stApp:has(.workspace-marker) button[kind="primary"],.stApp:has(.storefront-shell) button[kind="primary"] {background:#D94727!important;border-color:#D94727!important;}

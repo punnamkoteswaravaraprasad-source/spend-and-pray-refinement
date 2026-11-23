@@ -573,7 +573,7 @@ def display_feedback_dashboard(order_ids=None):
         ]
         if source_data:
             from workspace_ui import chart_style, show_chart
-            fig = px.bar(source_data, x="Responses", y="Source", orientation="h", color_discrete_sequence=["#287DFA"])
+            fig = px.bar(source_data, x="Responses", y="Source", orientation="h", color_discrete_sequence=["#EE512E"])
             chart_style(fig,height=max(340,len(source_data)*35))
             fig.update_yaxes(title="",autorange="reversed",showgrid=False)
             fig.update_xaxes(title="Responses",rangemode="tozero",dtick=1)

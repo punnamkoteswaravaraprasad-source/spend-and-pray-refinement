@@ -3,7 +3,7 @@ from attribution_engine import process_orders, calculate_kpis
 from ui import apply_theme, image_data_uri
 from interaction_ui import apply_interactions
 
-st.set_page_config(page_title="Spend & Pray | HotVile", page_icon="H", layout="wide", initial_sidebar_state="auto")
+st.set_page_config(page_title="HotVile | Hot Sauce Co.", page_icon="H", layout="wide", initial_sidebar_state="auto")
 apply_theme()
 apply_interactions()
 st.session_state.setdefault("user_role", None)
@@ -24,30 +24,36 @@ def enter(role):
 if st.session_state.user_role is None:
     # Register the welcome route too, disabling legacy automatic pages discovery.
     st.navigation([st.Page(lambda: None, title="Welcome", default=True)], position="hidden").run()
-    left,right=st.columns([1.35,1],gap="large",vertical_alignment="center")
-    with left:
-        banner=image_data_uri("images/companybanner.png")
-        st.markdown(f'''<section class="welcome-panel">
-          <div class="welcome-wordmark">HOTVILE <span>× SPEND &amp; PRAY</span></div>
-          <p class="welcome-kicker">BOLD FLAVOR. CLEARER DECISIONS.</p>
-          <h1>Know what brings<br>customers to your store.</h1>
-          <p>Connect campaigns, customer orders, and feedback in one focused workspace.</p>
-          <img src="{banner}" alt="The six branded HotVile sauce bottles" />
-          <div class="welcome-features"><span>Campaign tracking</span><span>Order attribution</span><span>Customer insights</span></div>
-        </section>''',unsafe_allow_html=True)
-    with right:
-        with st.container(border=True,key="entry_card"):
-            st.caption("SPEND & PRAY / INTERACTIVE DEMO")
-            st.header("Welcome to HotVile")
-            st.write("Choose an experience to get started.")
-            st.markdown("#### Shop the sauce collection")
-            st.caption("Find your heat, build a cart, and try a demonstration checkout.")
-            if st.button("Enter Customer Store →",type="primary",width="stretch"): enter("Customer")
-            st.divider()
-            st.markdown("#### Explore the owner workspace")
-            st.caption("Create campaigns, review order matches, and compare performance.")
-            if st.button("Enter Business Owner View →",width="stretch"): enter("Business Owner")
-            st.caption("Demo access · No authentication · Use fictional customer details only.")
+    st.markdown('<span class="hotvile-landing-marker"></span><div class="landing-announcement">SMALL BATCH. BIG FLAVOR. THIS IS HOTVILE.</div>',unsafe_allow_html=True)
+    brand,owner_entry=st.columns([3,1],vertical_alignment="center")
+    with brand:
+        st.markdown('<div class="landing-brand">HOTVILE<span>HOT SAUCE CO.</span></div>',unsafe_allow_html=True)
+    with owner_entry:
+        if st.button("Enter Business Owner View →",width="stretch"): enter("Business Owner")
+    with st.container(key="hotvile_landing_hero"):
+        story,visual=st.columns([1.05,1],gap="large",vertical_alignment="center")
+        with story:
+            st.markdown('<div class="landing-eyebrow">MEET YOUR NEXT FAVORITE SAUCE.</div><h1 class="landing-headline">SMALL BATCH.<br><span class="flavor-orange">BIG FLAVOR.</span></h1><p class="landing-intro">Meet HotVile. Six bold sauces, from mellow and smoky to bright and fiery. Find the heat that belongs on your table.</p>',unsafe_allow_html=True)
+            if st.button("Shop HotVile sauces →",type="primary",width="stretch"): enter("Customer")
+            st.markdown('<div class="landing-hero-notes">SIX SIGNATURE SAUCES <span>•</span> MILD TO EXTRA HOT</div>',unsafe_allow_html=True)
+        with visual:
+            banner=image_data_uri("images/companybanner.png")
+            st.markdown(f'<div class="landing-bottles"><img src="{banner}" alt="Meet HotVile: six branded bottles of hot sauce"><div class="landing-stamp">FIND<br>YOUR HEAT.</div></div>',unsafe_allow_html=True)
+    st.markdown('<section class="landing-collection-intro"><span>THE HOTVILE LINEUP</span><h2>A little heat. A lot of personality.</h2><p>Start with an everyday classic, go sweet and fiery, or turn up the heat.</p></section>',unsafe_allow_html=True)
+    from catalog import PRODUCTS
+    choices=st.columns(3,gap="large")
+    for column,product in zip(choices,[PRODUCTS[0],PRODUCTS[1],PRODUCTS[5]]):
+        with column:
+            photo=image_data_uri(product['image'])
+            st.markdown(f'''<article class="landing-flavor"><div class="landing-flavor-photo"><img src="{photo}" alt="HotVile {product['name']} branded sauce bottle"></div><div class="landing-flavor-details"><small>{product['heat'].upper()} HEAT</small><h3>{product['name']}</h3><p>{product['description']}</p></div></article>''',unsafe_allow_html=True)
+    with st.container(key="landing_owner_band"):
+        description,action=st.columns([2.5,1],vertical_alignment="center")
+        with description:
+            st.markdown('<div class="landing-eyebrow">BEHIND THE FLAVOR</div><h3>A clearer view of the business.</h3><p>Spend &amp; Pray is HotVile’s marketing workspace. Connect campaigns with orders and see which results need a closer look.</p>',unsafe_allow_html=True)
+        with action:
+            if st.button("Open owner workspace",width="stretch"): enter("Business Owner")
+    st.caption("Academic demonstration · Fictional products and orders · No real payments · Use fictional details")
+
 else:
     if st.session_state.user_role == "Business Owner":
         pages=[st.Page("pages/owner_overview.py",title="Dashboard",default=True),

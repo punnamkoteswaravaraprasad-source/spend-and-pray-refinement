@@ -52,14 +52,14 @@ with st.container(key="analytics_tiles"):
 left,right=st.columns(2,gap='medium')
 with left:
     progress_panel('Attribution quality','Rates across the selected orders.',[
-        ('Matched',k['coverage'],f"{k['coverage']:.1f}%",'#00B88C'),
-        ('Unattributed',k['unattributed_rate'],f"{k['unattributed_rate']:.1f}%",'#FF8A1E'),
-        ('Needs Review',k['needs_review_rate'],f"{k['needs_review_rate']:.1f}%",'#8654F7')],'analytics_rates')
+        ('Matched',k['coverage'],f"{k['coverage']:.1f}%",'#343434'),
+        ('Unattributed',k['unattributed_rate'],f"{k['unattributed_rate']:.1f}%",'#F4763C'),
+        ('Needs Review',k['needs_review_rate'],f"{k['needs_review_rate']:.1f}%",'#B79C88')],'analytics_rates')
 with right:
     share=k['matched_revenue']/k['total_revenue']*100 if k['total_revenue'] else 0
     progress_panel('Revenue distribution','Revenue with and without a verified match.',[
-        ('Matched revenue',share,f"${k['matched_revenue']:,.2f}",'#287DFA'),
-        ('Unverified revenue',100-share if k['total_revenue'] else 0,f"${k['total_revenue']-k['matched_revenue']:,.2f}",'#FF8A1E')],'analytics_revenue_split')
+        ('Matched revenue',share,f"${k['matched_revenue']:,.2f}",'#EE512E'),
+        ('Unverified revenue',100-share if k['total_revenue'] else 0,f"${k['total_revenue']-k['matched_revenue']:,.2f}",'#F4763C')],'analytics_revenue_split')
 matched=filtered[filtered['status']=='Matched']
 left,right=st.columns(2,gap='medium')
 with left:

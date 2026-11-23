@@ -9,15 +9,14 @@ attention=k['unattributed_orders']+k['needs_review']
 st.markdown('<span class="workspace-marker"></span>',unsafe_allow_html=True)
 apply_workspace()
 with st.container(key='owner_hero'):
-    st.markdown('<div class="hero-kicker"><span></span> MARKETING INTELLIGENCE</div>',unsafe_allow_html=True)
+    st.markdown('<div class="hero-kicker"><span></span> HOTVILE / BUSINESS OVERVIEW</div>',unsafe_allow_html=True)
     left,right=st.columns([1.5,1],vertical_alignment='center')
     with left:
-        st.title('Know what drives your sales.')
+        st.title('Your business, in focus.')
         st.write('Connect campaign activity to customer orders and focus on the tracking gaps that need attention.')
     with right:
         st.page_link('pages/create_campaign.py',label='Create campaign',icon=':material/add_circle:')
         st.page_link('pages/marketing_dashboard.py',label='Explore analytics',icon=':material/arrow_forward:')
-    st.markdown(f'<div class="hero-summary"><div><small>CAMPAIGNS</small><b>{len(campaigns)}</b></div><div><small>ORDERS</small><b>{k["total_orders"]}</b></div><div><small>ATTRIBUTION COVERAGE</small><b>{k["coverage"]:.1f}%</b></div><div><small>NEED ATTENTION</small><b>{attention}</b></div></div>',unsafe_allow_html=True)
 a,b,c,d=st.columns(4)
 metric_tile(a,'Total revenue',f'${k["total_revenue"]:,.2f}','Across recorded demo orders','overview_revenue',icon='money')
 metric_tile(b,'Customer orders',str(k['total_orders']),'In the connected dataset','overview_orders',icon='orders')
@@ -36,7 +35,7 @@ with left:
         matched=[r for r in rows if r['status']=='Matched']
         if matched:
             summary=pd.DataFrame(matched).groupby('channel',as_index=False)['revenue'].sum().sort_values('revenue')
-            fig=px.bar(summary,x='revenue',y='channel',orientation='h',color_discrete_sequence=['#287DFA'])
+            fig=px.bar(summary,x='revenue',y='channel',orientation='h',color_discrete_sequence=['#EE512E'])
             chart_style(fig,height=310);fig.update_xaxes(title='Revenue ($)',tickprefix='$');fig.update_yaxes(title='')
             show_chart(fig,'overview_channel_revenue')
         else: st.info('No matched orders to compare yet.')
