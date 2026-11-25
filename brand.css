@@ -163,3 +163,5 @@
 .st-key-workspace_panel_analytics_rates,.st-key-workspace_panel_analytics_revenue_split {min-height:260px!important;}
 .analytics-header {padding:1.3rem 1.7rem;margin-bottom:1.1rem;}
 @media(max-width:760px) {.stApp:has(.workspace-marker) [data-testid="stSidebar"] {min-width:225px!important;max-width:225px!important;width:225px!important;}}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] p {white-space:normal!important;overflow:visible!important;text-overflow:clip!important;font-size:.9rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] {height:auto!important;}
