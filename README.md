@@ -54,6 +54,12 @@ The current landing page uses the exact six catalog bottle photographs with crea
 
 The owner navigation follows Business Process → Create Campaign → Order Matching → Marketing Dashboard. Business Process explains the workflow and links directly to Create Campaign. The campaign builder retains portfolio cards, campaign validation, saved campaigns, tracking links, promo codes and QR downloads. The Marketing intelligence tagline and Analytics display names are removed.
 
+## Approved Teal & Tang design — November 25, 2026
+
+The landing page, store and owner tools share a teal seal, ivory surfaces and orange action buttons. Six newly generated bottle illustrations use matching cream labels with flavor-specific accents; the landing/store hero uses the same Classic Red identity beside tacos. Artwork is illustrative prototype content generated with the built-in image-generation tool, not photography of real merchandise. Source prompts and asset mapping are in `DESIGN_ASSETS.md`.
+
+The store uses a three-column, two-row catalog on desktop and stacked cards on phones. The owner workspace has compact navigation, wider content margins, value-only KPI cards, a full-width revenue chart and consistent channel colors. Order volume is available in an expander; campaign comparisons, tracking rates, and customer satisfaction remain available. Existing seed data, pricing, checkout storage, attribution rules and KPI formulas are unchanged.
+
 
 ## Professor checklist completion
 

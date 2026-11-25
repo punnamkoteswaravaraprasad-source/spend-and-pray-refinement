@@ -515,18 +515,18 @@ if st.session_state.get("last_order"):
     st.caption("Demonstration order only. No payment was collected.")
 from ui import image_data_uri
 bag_count=sum(st.session_state.cart.values())
-feature_image=image_data_uri('images/mango-habanero-hotvile-v3.png')
+feature_image=image_data_uri('images/hotvile-kitchen-teal.png')
 st.markdown(f'''<div class="storefront-shell">
 <div class="shop-announcement">SMALL BATCH. BIG FLAVOR. FIND YOUR HEAT.</div>
 <nav class="shop-nav">{logo_html()}<div><a href="#sauce-collection">HOT SAUCES</a><a href="#your-bag">YOUR BAG ({bag_count})</a></div></nav>
-<section class="shop-hero"><div class="shop-hero-copy"><span>SIX SAUCES. ENDLESS POSSIBILITIES.</span><h1 class="store-title">TURN UP<br>THE FLAVOR.</h1><p>From mellow and smoky to bright and fiery. Find your everyday favorite.</p><a class="shop-cta" href="#sauce-collection">SHOP THE SAUCES <span>↗</span></a><small>Demonstration store · No real payments</small></div><div class="shop-feature"><img src="{feature_image}" alt="HotVile Mango Habanero hot sauce bottle with its branded label"><span class="shop-feature-tag">MEET YOUR<br>NEW FAVORITE.</span></div></section>
+<section class="shop-hero"><div class="shop-hero-copy"><h1 class="store-title">Small batch.<br>Big flavor.</h1><p>Find your heat.</p><a class="shop-cta" href="#sauce-collection">Shop sauces <span>→</span></a><small>Demonstration store · No real payments</small></div><div class="shop-feature"><img src="{feature_image}" alt="HotVile Classic Red hot sauce beside freshly prepared tacos"></div></section>
 </div>''',unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # PRODUCT COLLECTION
 # ---------------------------------------------------------
 st.markdown('<div id="sauce-collection" class="section-kicker">The lineup</div>', unsafe_allow_html=True)
-st.markdown('<div class="section-heading">Pick your perfect heat.</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-heading">Find your heat</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="section-copy">Six signature sauces. Find the flavor and heat that fit your table.</div>',
     unsafe_allow_html=True,

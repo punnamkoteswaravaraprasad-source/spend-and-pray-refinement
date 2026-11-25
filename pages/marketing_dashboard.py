@@ -10,7 +10,7 @@ from attribution_engine import process_orders, calculate_kpis
 from dashboard_charts import revenue_chart
 from components.feedback_analytics import display_feedback_dashboard
 from reporting import amount
-from workspace_ui import workspace_header, apply_workspace, chart_style, show_chart, RED, BLUE, GREEN, MUTED, metric_tile, progress_panel
+from workspace_ui import workspace_header, apply_workspace, chart_style, show_chart, RED, BLUE, GREEN, MUTED, CHANNEL_COLORS, metric_tile, progress_panel
 
 workspace_header('Marketing Dashboard', 'Filter orders and compare sales, campaigns, and attribution.', 'HOTVILE')
 results, campaigns = process_orders()
@@ -49,30 +49,20 @@ with st.container(key="analytics_tiles"):
     metric_tile(c,'Matched orders',str(k['matched_orders']),'Verified campaign connection','analytics_matched','green','check')
     metric_tile(d,'Needs attention',str(k['unattributed_orders']+k['needs_review']),'Missing or conflicting tracking','analytics_attention','orange','alert')
     metric_tile(e,'Attribution coverage',f"{k['coverage']:.1f}%",'Matched share of all orders','analytics_coverage','purple','chart')
-left,right=st.columns(2,gap='medium')
-with left:
-    progress_panel('Attribution quality','Rates across the selected orders.',[
-        ('Matched',k['coverage'],f"{k['coverage']:.1f}%",'#343434'),
-        ('Unattributed',k['unattributed_rate'],f"{k['unattributed_rate']:.1f}%",'#F4763C'),
-        ('Needs Review',k['needs_review_rate'],f"{k['needs_review_rate']:.1f}%",'#B79C88')],'analytics_rates')
-with right:
-    share=k['matched_revenue']/k['total_revenue']*100 if k['total_revenue'] else 0
-    progress_panel('Revenue distribution','Revenue with and without a verified match.',[
-        ('Matched revenue',share,f"${k['matched_revenue']:,.2f}",'#EE512E'),
-        ('Unverified revenue',100-share if k['total_revenue'] else 0,f"${k['total_revenue']-k['matched_revenue']:,.2f}",'#F4763C')],'analytics_revenue_split')
 matched=filtered[filtered['status']=='Matched']
-left,right=st.columns(2,gap='medium')
-with left:
+with st.container(key='dashboard_trend'):
     with st.container(border=True, key="workspace_panel_marketing_dashboard_1"):
         st.subheader('Revenue over time')
         grouping=st.radio('Revenue grouping',['Daily','Weekly'],horizontal=True,label_visibility='collapsed')
         fig,note=revenue_chart(rows,weekly=grouping=='Weekly')
         chart_style(fig,currency=True,height=340)
+        fig.update_traces(marker_color=BLUE)
+        if fig.data and fig.data[0].type=='scatter': fig.update_traces(line_color=BLUE)
         fig.update_layout(title_text='')
         show_chart(fig,'sales_trend')
         if len(fig.data) == 0 or (fig.data and len(fig.data[0].x) <= 1):
             st.caption(note)
-with right:
+with st.expander('Order volume over time'):
     with st.container(border=True, key="workspace_panel_marketing_dashboard_2"):
         st.subheader('Order volume over time')
         daily=filtered.dropna(subset=['order_date']).copy()
@@ -98,8 +88,9 @@ for target,measure,title,color,currency in [(left,'revenue','Attributed revenue 
             st.subheader(title)
             if channel.empty: st.info('No matched orders in this selection.')
             else:
-                fig=px.bar(channel,x=measure,y='channel',orientation='h',color_discrete_sequence=[color],labels={measure:'Revenue ($)' if currency else 'Orders','channel':''})
+                fig=px.bar(channel,x=measure,y='channel',orientation='h',color='channel',color_discrete_map=CHANNEL_COLORS,labels={measure:'Revenue ($)' if currency else 'Orders','channel':''})
                 chart_style(fig,height=290)
+                fig.update_layout(showlegend=False)
                 fig.update_xaxes(tickprefix='$' if currency else '',tickformat=',.0f',rangemode='tozero')
                 fig.update_yaxes(showgrid=False)
                 fig.update_traces(hovertemplate='%{y}<br>'+('$' if currency else '')+'%{x:,.2f}<extra></extra>' if currency else '%{y}<br>%{x} orders<extra></extra>')
@@ -146,6 +137,18 @@ with st.expander('View campaign details'):
     details['ROAS']=details['ROAS'].map(lambda x:f'{x:.2f}x' if pd.notna(x) else 'N/A')
     st.dataframe(details,hide_index=True,width='stretch')
 
+st.subheader('Tracking quality')
+left,right=st.columns(2,gap='medium')
+with left:
+    progress_panel('Attribution quality','Rates across the selected orders.',[
+        ('Matched',k['coverage'],f"{k['coverage']:.1f}%",BLUE),
+        ('Unattributed',k['unattributed_rate'],f"{k['unattributed_rate']:.1f}%",'#D9A43A'),
+        ('Needs Review',k['needs_review_rate'],f"{k['needs_review_rate']:.1f}%",MUTED)],'analytics_rates')
+with right:
+    share=k['matched_revenue']/k['total_revenue']*100 if k['total_revenue'] else 0
+    progress_panel('Revenue distribution','Revenue with and without a verified match.',[
+        ('Matched revenue',share,f"${k['matched_revenue']:,.2f}",BLUE),
+        ('Unverified revenue',100-share if k['total_revenue'] else 0,f"${k['total_revenue']-k['matched_revenue']:,.2f}",'#D9A43A')],'analytics_revenue_split')
 with st.container(border=True, key="workspace_panel_marketing_dashboard_7"):
     display_feedback_dashboard(filtered['order_id'].tolist())
 with st.expander('Metric definitions and demo limitations'):

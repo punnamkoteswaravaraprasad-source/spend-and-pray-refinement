@@ -3,10 +3,11 @@ from html import escape
 from pathlib import Path
 import streamlit as st
 
-RED = '#ED512E'
-BLUE = '#ED512E'
-GREEN = '#333333'
-MUTED = '#ACA29B'
+RED = '#DF5426'
+BLUE = '#08685C'
+GREEN = '#7C9F75'
+MUTED = '#A5AFAB'
+CHANNEL_COLORS = {'Paid Social':'#4D8FBC','Influencer':'#E5A047','Farmers Market':'#8EAB7E','Pop-up Event':'#A27B96'}
 
 def workspace_header(title, description, section='WORKSPACE'):
     st.markdown('<span class="workspace-marker"></span>', unsafe_allow_html=True)
@@ -35,6 +36,7 @@ def progress_panel(title, description, entries, key):
 def apply_workspace():
     css=Path(__file__).with_name('workspace.css').read_text(encoding='utf-8')
     css += '\n' + Path(__file__).with_name('brand.css').read_text(encoding='utf-8')
+    css += '\n' + Path(__file__).with_name('hotvile.css').read_text(encoding='utf-8')
     st.markdown(f'<style>{css}</style>',unsafe_allow_html=True)
 
 def chart_style(fig, title=None, currency=False, height=330):

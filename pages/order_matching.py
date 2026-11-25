@@ -19,7 +19,7 @@ st.caption(f"{len(selected)} of {len(results)} orders selected")
 if st.session_state.pop('review_saved',None): st.success('Review saved. Dashboard totals are updated.')
 left,right=st.columns(2,gap='large')
 statuses=['Matched','Unattributed','Needs Review']
-colors=['#3C3630','#EE512E','#BAA899']
+colors=['#08685C','#D9A43A','#A5AFAB']
 counts=[sum(r['status']==s for r in selected) for s in statuses]
 revenues=[sum(r['revenue'] for r in selected if r['status']==s) for s in statuses]
 with left:
