@@ -10,7 +10,7 @@ MUTED = '#ACA29B'
 
 def workspace_header(title, description, section='WORKSPACE'):
     st.markdown('<span class="workspace-marker"></span>', unsafe_allow_html=True)
-    st.markdown(f'<header class="analytics-header"><div class="header-kicker">{escape(section)}</div><h1>{escape(title)}</h1><p>{escape(description)}</p></header>', unsafe_allow_html=True)
+    st.markdown(f'<header class="analytics-header"><h1>{escape(title)}</h1></header>', unsafe_allow_html=True)
     apply_workspace()
 
 def metric_tile(column, label, value, description, key, tone='blue', icon='chart'):
@@ -21,14 +21,11 @@ def metric_tile(column, label, value, description, key, tone='blue', icon='chart
            'money':'<path d="M12 2v20M18 6H9a4 4 0 000 8h6a4 4 0 000-8M6 18h9"/>'}
     with column:
         with st.container(border=True,key=f'workspace_tile_{key}'):
-            st.markdown(f'<span class="tile-icon {tone}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">{paths.get(icon,paths["chart"])}</svg></span>',unsafe_allow_html=True)
             st.metric(label,value)
-            st.caption(description)
 
 def progress_panel(title, description, entries, key):
     with st.container(border=True,key=f'workspace_panel_{key}'):
         st.subheader(title)
-        st.caption(description)
         parts=[]
         for label,value,display,color in entries:
             safe=max(0,min(100,float(value)))

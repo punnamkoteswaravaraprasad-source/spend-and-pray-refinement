@@ -147,21 +147,16 @@ create_tab, saved_tab = st.tabs(["Create Campaign", "Saved Campaigns"])
 
 with create_tab:
     st.markdown("### Campaign details")
-    st.caption("Tracking assets are generated automatically after you save the campaign.")
 
     form_column, guide_column = st.columns([1.65, 1], gap="large")
     with guide_column:
         with st.container(border=True, key="workspace_panel_create_campaign_0"):
             st.subheader("Your sharing assets")
-            st.caption("Created automatically when you save.")
             st.markdown("**Tracking link**")
-            st.caption("Connect store visits and orders to this campaign.")
             st.divider()
             st.markdown("**Promo code**")
-            st.caption("A campaign reference customers can enter at checkout.")
             st.divider()
             st.markdown("**QR code**")
-            st.caption("Download a scannable link for events and print materials.")
     with form_column:
         with st.form("create_campaign_form"):
             campaign_name = st.text_input(
@@ -173,7 +168,6 @@ with create_tab:
                 list(CHANNEL_DETAILS.keys()),
             )
             icon, channel_description = CHANNEL_DETAILS[channel]
-            st.caption(channel_description)
 
             date_col1, date_col2 = st.columns(2)
             with date_col1:
@@ -252,7 +246,6 @@ with create_tab:
     if st.session_state.get("last_campaign"):
         campaign = st.session_state.last_campaign
         st.markdown("### Ready to share")
-        st.caption("Your campaign assets are ready. Copy the promo code or tracking link, or download the QR code.")
 
         share_url = current_campaign_link(campaign)
         details_col, qr_col = st.columns([1.45, 1], gap="large")
@@ -305,7 +298,6 @@ with create_tab:
                     width="stretch",
                     type="primary",
                 )
-                st.caption("Scan this code to open the customer store with campaign tracking.")
 
         if current_host in ("127.0.0.1", "localhost", "::1"):
             st.warning(
@@ -345,7 +337,6 @@ with saved_tab:
                         current_campaign_link(saved_campaign),
                     )
 
-st.caption("Campaign budget is planned spending. The dashboard reports budget-based, not profit-based, ROAS.")
 
 from interaction_ui import apply_interactions
 apply_interactions()

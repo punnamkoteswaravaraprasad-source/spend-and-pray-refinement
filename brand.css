@@ -146,3 +146,20 @@
 .matching-legend > div {display:flex;align-items:center;gap:.6rem;padding:.35rem 0;font-size:1rem;color:#564638;}
 .matching-legend i {width:11px;height:11px;display:inline-block;border-radius:50%;flex-shrink:0;}
 .matching-legend b {margin-left:auto;font-size:.95rem;font-weight:550;}
+
+/* Compact orange-cream navigation and quiet, value-only KPI cards. */
+.hotvile-logo {border-radius:16px;filter:drop-shadow(0 0 8px #EF9D5A55);width:205px;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] {background:#FFF0DC!important;min-width:240px!important;max-width:240px!important;width:240px!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebarUserContent"] {padding:1rem .85rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:.4rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] .hotvile-logo {width:195px;margin:.3rem 0 .6rem;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] hr {margin:.7rem 0!important;border-color:#EDCFAC!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink"] a {padding:.5rem .6rem!important;margin:0!important;min-height:40px;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] p {font-size:.95rem!important;line-height:1.35!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] a[aria-current="page"],.stApp:has(.workspace-marker) [data-testid="stSidebar"] a[aria-current="true"] {background:#FFE0B8!important;border-color:#EDBB8B!important;}
+.sidebar-role {font-size:.9rem;color:#70452D;padding:.35rem .6rem;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {min-height:125px!important;padding:1.15rem!important;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] [data-testid="stMetricLabel"] {width:100%!important;min-height:30px;}
+.st-key-workspace_panel_analytics_rates,.st-key-workspace_panel_analytics_revenue_split {min-height:260px!important;}
+.analytics-header {padding:1.3rem 1.7rem;margin-bottom:1.1rem;}
+@media(max-width:760px) {.stApp:has(.workspace-marker) [data-testid="stSidebar"] {min-width:225px!important;max-width:225px!important;width:225px!important;}}

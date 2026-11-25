@@ -74,18 +74,18 @@ else:
             st.page_link(pages[1],label="Order Matching",icon=":material/fact_check:")
             st.page_link(pages[2],label="Marketing Dashboard",icon=":material/bar_chart:")
             st.divider()
-            st.markdown('<div class="sidebar-profile">Business owner demo<small>No authentication · Fictional data</small></div>',unsafe_allow_html=True)
-            if st.button("Switch demo experience",width="stretch"):
-                st.session_state.user_role=None
+            st.markdown('<div class="sidebar-role">Business Owner</div>',unsafe_allow_html=True)
+            if st.button("Customer Experience",width="stretch"):
+                st.session_state.user_role="Customer"
                 st.session_state.campaign_tracking={}
                 st.session_state.last_campaign_signature=None
                 st.query_params.clear()
                 st.rerun()
     navigation.run()
     if st.session_state.user_role == "Customer":
-        with st.expander("Demo navigation"):
-            if st.button("Switch demo experience",width="stretch"):
-                st.session_state.user_role=None
+        with st.expander("Customer Experience"):
+            if st.button("Business Owner",width="stretch"):
+                st.session_state.user_role="Business Owner"
                 st.session_state.campaign_tracking={}
                 st.session_state.last_campaign_signature=None
                 st.query_params.clear()

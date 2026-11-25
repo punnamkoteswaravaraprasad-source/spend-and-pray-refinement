@@ -70,7 +70,8 @@ with left:
         chart_style(fig,currency=True,height=340)
         fig.update_layout(title_text='')
         show_chart(fig,'sales_trend')
-        st.caption(note)
+        if len(fig.data) == 0 or (fig.data and len(fig.data[0].x) <= 1):
+            st.caption(note)
 with right:
     with st.container(border=True, key="workspace_panel_marketing_dashboard_2"):
         st.subheader('Order volume over time')
@@ -139,7 +140,6 @@ with right:
             fig.add_vline(x=1,line_dash='dot',line_color='#ACB5C3')
             fig.update_traces(hovertemplate='%{y}<br>%{x:.2f}x<extra></extra>')
             show_chart(fig,'campaign_return')
-        st.caption('1.00x means revenue equals planned budget. It is not a profit break-even point. Zero-budget campaigns are N/A.')
 with st.expander('View campaign details'):
     details=performance.copy()
     for name in ['Attributed revenue','Planned budget']: details[name]=details[name].map(lambda x:f'${x:,.2f}')
@@ -149,6 +149,7 @@ with st.expander('View campaign details'):
 with st.container(border=True, key="workspace_panel_marketing_dashboard_7"):
     display_feedback_dashboard(filtered['order_id'].tolist())
 with st.expander('Metric definitions and demo limitations'):
+    st.write('1.00x means revenue equals planned budget. Costs and actual spend are not recorded; this is not profit break-even. Zero-budget campaigns are N/A.')
     st.write('Attribution coverage = matched orders ÷ selected orders × 100. Unattributed and Needs Review rates use the same order denominator. Average order value = total revenue ÷ selected orders.')
     st.write(f"Matched revenue: ${k['matched_revenue']:,.2f} · Planned budget: ${budget:,.2f} · Average order value: ${k['average_order_value']:,.2f}")
     st.write('Campaign/channel filters narrow verified matches; unverified orders remain unless excluded by status. Fictional seed data and demonstration checkouts only. Attribution is an association, not causation. No actual advertising spend, costs, authentication, payments, or durable cloud database are recorded.')

@@ -526,7 +526,6 @@ def display_feedback_dashboard(order_ids=None):
         selected = set(order_ids)
         orders = [row for row in orders if row.get("order_id") in selected]
     metrics = calculate_feedback_metrics(orders, feedback)
-    st.caption(f"Demo feedback · {metrics['total_responses']} responses from {metrics['total_orders']} selected orders.")
     if not metrics["total_responses"]:
         st.info("Customer feedback will appear here after customers submit their surveys.")
         return
@@ -580,9 +579,9 @@ def display_feedback_dashboard(order_ids=None):
         else:
             st.info("No discovery-source responses yet.")
 
-    st.caption("Discovery sources are self-reported and do not change verified campaign attribution or ROAS.")
     with st.expander("Read customer reviews"):
         display_recent_feedback(metrics["valid_feedback"])
     with st.expander("View self-reported source details"):
+        st.write("Self-reported sources do not change campaign attribution or ROAS.")
         st.caption(f"{metrics['recovered_count']} unattributed orders have a known self-reported discovery source.")
         display_recovered_orders(metrics["recovered_orders"])
