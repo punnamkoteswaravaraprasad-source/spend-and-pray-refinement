@@ -4,8 +4,8 @@ from pathlib import Path
 import streamlit as st
 
 RED = '#DF5426'
-BLUE = '#08685C'
-GREEN = '#7C9F75'
+BLUE = '#C94817'
+GREEN = '#987A57'
 MUTED = '#A5AFAB'
 CHANNEL_COLORS = {'Paid Social':'#4D8FBC','Influencer':'#E5A047','Farmers Market':'#8EAB7E','Pop-up Event':'#A27B96'}
 

@@ -1,5 +1,11 @@
 # HotVile design assets
 
+## Current Bold Stack identity — November 26, 2026
+
+Built-in image-generation edits use the original product/hero artwork as the edit target and concept 09 from the logo exploration board as the brand reference. Prompt: replace only the teal logo with orange chunky HOT stacked above VILE, a chili silhouette in the O, heat rays on either side and a small charcoal HOT SAUCE CO. subline. Preserve bottle geometry, sauce colors, flavor names, ingredient illustrations, ribbons, background, lighting and composition. Hero edits preserve the kitchen and tacos. No extra props, UI or promotional claims.
+
+Current assets use `images/products/*-bold.png`, `images/hotvile-kitchen-bold.png` and `images/hotvile-logo-bold.png`. The standalone header logo uses the same stacked identity on warm ivory, with no glow, halo or shadow. Previous teal artwork remains available as historical source material. These are generated demonstration illustrations, not photographs of real inventory.
+
 Generated with the built-in image-generation tool on November 25, 2026. These are fictional product illustrations for an academic demonstration. No third-party branded product photography is used.
 
 ## Product prompt template

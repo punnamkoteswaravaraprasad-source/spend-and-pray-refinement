@@ -54,7 +54,11 @@ The current landing page uses the exact six catalog bottle photographs with crea
 
 The owner navigation follows Business Process → Create Campaign → Order Matching → Marketing Dashboard. Business Process explains the workflow and links directly to Create Campaign. The campaign builder retains portfolio cards, campaign validation, saved campaigns, tracking links, promo codes and QR downloads. The Marketing intelligence tagline and Analytics display names are removed.
 
-## Approved Teal & Tang design — November 25, 2026
+## Current design: 09 Bold Stack — November 26, 2026
+
+The website now uses the selected orange HOT / VILE stacked wordmark, charcoal text, cream surfaces and orange storefront hero panels. Header, bottle labels and kitchen hero artwork share this identity. Flavor accents and chart category colors remain distinct. Business Process → Create Campaign → Order Matching → Marketing Dashboard remains the owner flow. The November 25 Teal & Tang implementation is retained in Git history.
+
+## Previous Teal & Tang design — November 25, 2026
 
 The landing page, store and owner tools share a teal seal, ivory surfaces and orange action buttons. Six newly generated bottle illustrations use matching cream labels with flavor-specific accents; the landing/store hero uses the same Classic Red identity beside tacos. Artwork is illustrative prototype content generated with the built-in image-generation tool, not photography of real merchandise. Source prompts and asset mapping are in `DESIGN_ASSETS.md`.
 

@@ -515,7 +515,7 @@ if st.session_state.get("last_order"):
     st.caption("Demonstration order only. No payment was collected.")
 from ui import image_data_uri
 bag_count=sum(st.session_state.cart.values())
-feature_image=image_data_uri('images/hotvile-kitchen-teal.png')
+feature_image=image_data_uri('images/hotvile-kitchen-bold.png')
 st.markdown(f'''<div class="storefront-shell">
 <div class="shop-announcement">SMALL BATCH. BIG FLAVOR. FIND YOUR HEAT.</div>
 <nav class="shop-nav">{logo_html()}<div><a href="#sauce-collection">HOT SAUCES</a><a href="#your-bag">YOUR BAG ({bag_count})</a></div></nav>
