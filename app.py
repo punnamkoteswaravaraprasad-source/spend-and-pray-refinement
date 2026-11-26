@@ -32,14 +32,14 @@ if st.session_state.user_role is None:
     with owner_entry:
         if st.button("Enter Business Owner View →",width="stretch"): enter("Business Owner")
     with st.container(key="hotvile_landing_hero"):
-        story,visual=st.columns([1.05,1],gap="large",vertical_alignment="center")
-        with story:
-            st.markdown('<div class="landing-eyebrow">THIS IS HOTVILE.</div><h1 class="landing-headline">SMALL BATCH.<br><span class="flavor-orange">BIG FLAVOR.</span></h1><p class="landing-intro">Six bold sauces. From your first kick to your next obsession.</p>',unsafe_allow_html=True)
+        st.markdown('<div class="bottle-free-copy"><div class="landing-eyebrow">HOTVILE HOT SAUCE CO.</div><h1 class="landing-headline">Bring the heat.<br><span class="flavor-orange">Keep the flavor.</span></h1><p class="landing-intro">Six signature sauces. Find your kind of heat.</p></div><div class="landing-flavor-seal" aria-hidden="true">BOLD<br>FLAVOR</div>',unsafe_allow_html=True)
+        shop,about=st.columns([1,2],vertical_alignment="center")
+        with shop:
             if st.button("Shop HotVile sauces →",type="primary",width="stretch"): enter("Customer")
-            st.markdown('<div class="landing-hero-notes">SIX SIGNATURE SAUCES <span>•</span> MILD TO EXTRA HOT</div>',unsafe_allow_html=True)
-        with visual:
-            st.markdown(f'<div class="landing-burst-stage"><img class="landing-lifestyle" src="{image_data_uri("images/hotvile-launch-burst.png")}" alt="HotVile sauce collection in a bright product launch display"><span class="landing-heat-stamp">FIND YOUR<br>HEAT.</span></div>',unsafe_allow_html=True)
-    st.markdown('<section class="landing-collection-intro"><span>THE HOTVILE LINEUP</span><h2>A little heat. A lot of personality.</h2><p>Start with an everyday classic, go sweet and fiery, or turn up the heat.</p></section>',unsafe_allow_html=True)
+        with about:
+            st.markdown('<a class="landing-meet-link" href="#hotvile-lineup">Meet HotVile</a>',unsafe_allow_html=True)
+        st.markdown('<div class="landing-hero-notes">Mild <span>•</span> Medium <span>•</span> Hot <span>•</span> Extra hot</div>',unsafe_allow_html=True)
+    st.markdown('<section id="hotvile-lineup" class="landing-collection-intro"><span>THE HOTVILE LINEUP</span><h2>Find your flavor.</h2><p>Start with an everyday classic, go sweet and fiery, or turn up the heat.</p></section>',unsafe_allow_html=True)
     from catalog import PRODUCTS
     choices=st.columns(3,gap="large")
     for column,product in zip(choices,[PRODUCTS[0],PRODUCTS[1],PRODUCTS[5]]):

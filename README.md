@@ -56,6 +56,8 @@ The owner navigation follows Business Process → Create Campaign → Order Matc
 
 ## Current design: 09 Bold Stack — November 26, 2026
 
+The current landing hero is bottle-free: live headline, shopping button and collection anchor over CSS orange/peach rays, with a decorative Bold Flavor seal. Product bottles remain in the collection and storefront. Owner pages use orange rays behind opaque white panels and a matching orange sidebar with framed navigation blocks. The hero and workspace were visually verified at desktop and 390px widths; existing integration workflows pass.
+
 The refined orange workspace uses four individually framed navigation blocks with divider lines and margins, a light-orange main background and white title, KPI and chart panels. The landing page uses a warm peach hero, charcoal/orange headline and a dynamic three-bottle launch illustration with a small heat stamp. Desktop and 390px layouts were visually checked; the isolated interface suite passes with the four-step flow intact.
 
 The website now uses the selected orange HOT / VILE stacked wordmark, charcoal text, cream surfaces and orange storefront hero panels. Header, bottle labels and kitchen hero artwork share this identity. Flavor accents and chart category colors remain distinct. Business Process → Create Campaign → Order Matching → Marketing Dashboard remains the owner flow. The November 25 Teal & Tang implementation is retained in Git history.

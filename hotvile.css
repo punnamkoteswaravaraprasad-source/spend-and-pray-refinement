@@ -161,3 +161,33 @@
  .landing-burst-stage .landing-lifestyle {height:290px;}
  .landing-heat-stamp {width:80px;height:80px;font-size:.85rem;right:-.3rem;}
 }
+
+/* Bottle-free typographic hero and the approved radiating orange workspace. */
+.st-key-hotvile_landing_hero {background:linear-gradient(90deg,#FFF6EC 0%,#FFE7D3F5 43%,#FFE7D345 72%,#FFE7D300 100%),repeating-conic-gradient(from 228deg at 92% 100%,#F47B24 0deg 12deg,#FFDCB9 12deg 24deg)!important;border:1px solid #F2C6A4!important;padding:3rem!important;min-height:485px;}
+.st-key-hotvile_landing_hero::before {content:none!important;}
+.bottle-free-copy {max-width:80%;position:relative;z-index:1;}
+.stApp .st-key-hotvile_landing_hero .landing-headline {font-size:clamp(3rem,5.8vw,5.7rem)!important;line-height:1.04!important;letter-spacing:-.045em!important;margin:1rem 0 1.5rem!important;}
+.stApp .st-key-hotvile_landing_hero .landing-headline .flavor-orange {font-style:italic;}
+.stApp .st-key-hotvile_landing_hero .landing-intro {max-width:none!important;font-size:1.15rem!important;}
+.landing-flavor-seal {position:absolute;right:4%;top:40%;width:145px;height:145px;border-radius:50%;display:grid;align-content:center;text-align:center;background:#FFF8EBD9;color:#A93D13;font:italic 700 1.8rem/1.15 Georgia,serif;transform:rotate(-8deg);border:1px solid #F3C79C;}
+.landing-meet-link {display:inline-block;color:#3B2C22!important;text-decoration:none!important;border-bottom:1px solid #AB4F25;font-size:1rem;padding:.35rem 0;margin-left:1rem;}
+.st-key-hotvile_landing_hero .landing-hero-notes {margin-top:1.4rem;letter-spacing:.07em;font-size:.9rem!important;}
+.st-key-hotvile_landing_hero button {position:relative;z-index:2;}
+.stApp:has(.workspace-marker),[data-testid="stMain"]:has(.workspace-marker) {background-color:#FFD9B4!important;background-image:repeating-conic-gradient(from 195deg at 0% 100%,#F78A35 0deg 13deg,#FFDCB9 13deg 26deg)!important;background-attachment:fixed!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] {background:#F47B24!important;border-right:1px solid #D75A12!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] .hotvile-logo {background:#FFF8EC;border:1px solid #FFE8CA;border-radius:10px;padding:.5rem;box-sizing:border-box;mix-blend-mode:normal;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [class*="st-key-owner_nav_block_"] {background:#FFF9EF!important;border-color:#FFD4A8!important;box-shadow:none!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] hr {border-color:#FFD5AA!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] .sidebar-role {color:#FFFFFF!important;font-weight:650;}
+.stApp:has(.workspace-marker) .overview-route {background:#FFF9F0;border-color:#F0CBAB;}
+.stApp:has(.workspace-marker) [data-testid="stExpander"] {background:#FFFFFF!important;border-radius:10px;}
+.stApp:has(.workspace-marker) .analytics-header,.stApp:has(.workspace-marker) [class*="st-key-workspace_panel_"],.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {background:#FFFFFF!important;}
+@media(max-width:760px) {
+ .st-key-hotvile_landing_hero {padding:1.5rem!important;min-height:0;}
+ .bottle-free-copy {max-width:100%;}
+ .stApp .st-key-hotvile_landing_hero .landing-headline {font-size:2.65rem!important;letter-spacing:-.05em!important;line-height:1.12!important;}
+ .stApp .st-key-hotvile_landing_hero .landing-intro {font-size:1rem!important;}
+ .landing-flavor-seal {display:none;}
+ .landing-meet-link {margin:0;}
+ .stApp:has(.workspace-marker),[data-testid="stMain"]:has(.workspace-marker) {background-image:repeating-conic-gradient(from 195deg at 0% 100%,#FBA05B 0deg 15deg,#FFE0C2 15deg 30deg)!important;}
+}
