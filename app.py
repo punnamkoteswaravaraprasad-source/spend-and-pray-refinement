@@ -34,11 +34,11 @@ if st.session_state.user_role is None:
     with st.container(key="hotvile_landing_hero"):
         story,visual=st.columns([1.05,1],gap="large",vertical_alignment="center")
         with story:
-            st.markdown('<div class="landing-eyebrow">MEET YOUR NEXT FAVORITE SAUCE.</div><h1 class="landing-headline">SMALL BATCH.<br><span class="flavor-orange">BIG FLAVOR.</span></h1><p class="landing-intro">Meet HotVile. Six bold sauces, from mellow and smoky to bright and fiery. Find the heat that belongs on your table.</p>',unsafe_allow_html=True)
+            st.markdown('<div class="landing-eyebrow">THIS IS HOTVILE.</div><h1 class="landing-headline">SMALL BATCH.<br><span class="flavor-orange">BIG FLAVOR.</span></h1><p class="landing-intro">Six bold sauces. From your first kick to your next obsession.</p>',unsafe_allow_html=True)
             if st.button("Shop HotVile sauces →",type="primary",width="stretch"): enter("Customer")
             st.markdown('<div class="landing-hero-notes">SIX SIGNATURE SAUCES <span>•</span> MILD TO EXTRA HOT</div>',unsafe_allow_html=True)
         with visual:
-            st.markdown(f'<img class="landing-lifestyle" src="{image_data_uri("images/hotvile-kitchen-bold.png")}" alt="HotVile Classic Red hot sauce with tacos on a kitchen table">',unsafe_allow_html=True)
+            st.markdown(f'<div class="landing-burst-stage"><img class="landing-lifestyle" src="{image_data_uri("images/hotvile-launch-burst.png")}" alt="HotVile sauce collection in a bright product launch display"><span class="landing-heat-stamp">FIND YOUR<br>HEAT.</span></div>',unsafe_allow_html=True)
     st.markdown('<section class="landing-collection-intro"><span>THE HOTVILE LINEUP</span><h2>A little heat. A lot of personality.</h2><p>Start with an everyday classic, go sweet and fiery, or turn up the heat.</p></section>',unsafe_allow_html=True)
     from catalog import PRODUCTS
     choices=st.columns(3,gap="large")
@@ -67,10 +67,14 @@ else:
         with st.sidebar:
             st.markdown(logo_html(),unsafe_allow_html=True)
             st.divider()
-            st.page_link(pages[0],label="Business Process",icon=":material/route:")
-            st.page_link(pages[3],label="Create Campaign",icon=":material/campaign:")
-            st.page_link(pages[1],label="Order Matching",icon=":material/fact_check:")
-            st.page_link(pages[2],label="Marketing Dashboard",icon=":material/bar_chart:")
+            owner_links=[(pages[0],"Business Process",":material/route:"),
+                         (pages[3],"Create Campaign",":material/campaign:"),
+                         (pages[1],"Order Matching",":material/fact_check:"),
+                         (pages[2],"Marketing Dashboard",":material/bar_chart:")]
+            for index,(page,label,icon) in enumerate(owner_links):
+                with st.container(border=True,key=f"owner_nav_block_{index}"):
+                    st.page_link(page,label=label,icon=icon)
+                if index<len(owner_links)-1: st.divider()
             st.divider()
             st.markdown('<div class="sidebar-role">Business Owner</div>',unsafe_allow_html=True)
             if st.button("Customer Experience",width="stretch"):

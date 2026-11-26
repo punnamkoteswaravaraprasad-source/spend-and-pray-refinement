@@ -120,3 +120,44 @@
 .stApp .st-key-hotvile_landing_hero button[kind="primary"] p {color:#9B310D!important;}
 .stApp:has(.workspace-marker) [data-testid="stSidebar"] a[data-testid="stPageLink-NavLink"][aria-current="page"],.stApp:has(.workspace-marker) [data-testid="stSidebar"] a[data-testid="stPageLink-NavLink"][aria-current="true"] {background:#FFE0B7!important;border-color:#EBC493!important;}
 @media(max-width:760px) {.hotvile-logo,.shop-nav .hotvile-logo {width:112px;}.stApp:has(.workspace-marker) [data-testid="stSidebar"] .hotvile-logo {width:135px;}}
+
+/* Orange workspace: individually framed navigation and calm content panels. */
+.stApp:has(.workspace-marker),[data-testid="stMain"]:has(.workspace-marker) {background:#FFF0E4!important;}
+.stApp:has(.workspace-marker) .block-container {padding:2rem 2.1rem 4rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] {background:#FFF9F1!important;border-right:1px solid #EDCEB7!important;min-width:250px!important;max-width:250px!important;width:250px!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebarUserContent"] {padding:1.1rem 1rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [class*="st-key-owner_nav_block_"] {background:#FFFFFF!important;border:1px solid #EFD5C0!important;border-radius:9px!important;padding:.25rem!important;box-shadow:0 2px 4px #9A4E1610;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {gap:.4rem!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] hr {margin:.35rem .2rem!important;border-color:#EDD8C5!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink"] a {margin:0!important;padding:.75rem .6rem!important;min-height:46px;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] [data-testid="stPageLink"] a p {font-size:.93rem!important;line-height:1.4!important;}
+.stApp:has(.workspace-marker) [data-testid="stSidebar"] a[data-testid="stPageLink-NavLink"][aria-current="page"],.stApp:has(.workspace-marker) [data-testid="stSidebar"] a[data-testid="stPageLink-NavLink"][aria-current="true"] {background:#FFE2C9!important;border-color:#E7A67C!important;box-shadow:inset 3px 0 #D94A1D;}
+.stApp:has(.workspace-marker) .analytics-header {background:#FFFFFF!important;border:1px solid #EDD8C8!important;border-left:4px solid #E26432!important;border-radius:11px!important;padding:1.35rem 1.5rem!important;margin-bottom:1.6rem;}
+.stApp:has(.workspace-marker) .analytics-header h1 {font-size:2rem!important;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_panel_"],.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {background:#FFFFFF!important;border-color:#EDD9C9!important;box-shadow:0 2px 8px #6A341006!important;}
+.stApp:has(.workspace-marker) [class*="st-key-workspace_tile_"] {border-top:3px solid #F3B78F!important;}
+.stApp:has(.workspace-marker) [data-testid="stMetric"] {background:#FFFFFF!important;border-color:#EDD9C9!important;}
+.stApp:has(.hotvile-landing-marker) {background:#FFF7ED!important;}
+.landing-announcement {background:#FBE4CE!important;color:#7B3B1C!important;border-radius:6px;letter-spacing:.15em;}
+.st-key-hotvile_landing_hero {position:relative;background:#FFE4C9!important;border:1px solid #EFC49F!important;border-radius:16px!important;padding:2.5rem!important;overflow:hidden;}
+.st-key-hotvile_landing_hero::before {content:"";position:absolute;inset:auto -8% -120px 48%;height:290px;background:#F9BA79;border-radius:50%;pointer-events:none;}
+.stApp .st-key-hotvile_landing_hero .landing-headline {font-family:Georgia,serif!important;color:#32221B!important;font-size:clamp(3rem,5vw,5.4rem)!important;line-height:1.02!important;letter-spacing:-.055em!important;}
+.stApp .st-key-hotvile_landing_hero .landing-headline .flavor-orange {color:#C23C0E!important;}
+.stApp .st-key-hotvile_landing_hero .landing-intro {color:#704A32!important;font-size:1.1rem!important;max-width:390px;}
+.st-key-hotvile_landing_hero .landing-eyebrow,.st-key-hotvile_landing_hero .landing-hero-notes {color:#954B27!important;}
+.stApp .st-key-hotvile_landing_hero button[kind="primary"] {background:#D44919!important;border-color:#D44919!important;min-height:50px;}
+.stApp .st-key-hotvile_landing_hero button[kind="primary"] p {color:#FFFFFF!important;}
+.landing-burst-stage {position:relative;padding:.5rem 0 1rem;}
+.landing-burst-stage .landing-lifestyle {height:440px;max-height:none;object-fit:cover;border-radius:10px;box-shadow:0 15px 25px #A7501520;}
+.landing-heat-stamp {position:absolute;bottom:0;right:-.7rem;display:grid;place-items:center;width:105px;height:105px;background:#F9C845;color:#522A16;border:2px solid #FFF4D6;border-radius:50%;font-weight:850;font-size:1.05rem;line-height:1.1;text-align:center;transform:rotate(10deg);}
+.st-key-landing_owner_band {background:#FFEBD8!important;border:1px solid #EED0B7!important;}
+@media(max-width:760px) {
+ .stApp:has(.workspace-marker) .block-container {padding:1rem 1rem 3rem!important;}
+ .stApp:has(.workspace-marker) [data-testid="stSidebar"] {min-width:235px!important;max-width:235px!important;width:235px!important;}
+ .stApp:has(.workspace-marker) .analytics-header {padding:1rem!important;}
+ .stApp:has(.workspace-marker) .analytics-header h1 {font-size:1.7rem!important;}
+ .st-key-hotvile_landing_hero {padding:1.5rem!important;}
+ .stApp .st-key-hotvile_landing_hero .landing-headline {font-size:3rem!important;}
+ .landing-burst-stage .landing-lifestyle {height:290px;}
+ .landing-heat-stamp {width:80px;height:80px;font-size:.85rem;right:-.3rem;}
+}
